@@ -1,4 +1,14 @@
 @import './base/common';
+@import './base/fonts';
 @import './base/global';
 @import './base/container';
+
+@import './utils/variables';
+@import './utils/hidden';
+
+@import './components/header';
+@import './components//main';
+@import './components/footer';
+@import './components/modal-film';
+@import './components/modal-team';
 
