@@ -365,6 +365,11 @@ img {
     flex-basis: calc((100% - 32px) / 3);
   }
 }
+@media screen and (max-width: 768px) {
+  .film-card:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
 .film-card__img {
   overflow: hidden;
 }

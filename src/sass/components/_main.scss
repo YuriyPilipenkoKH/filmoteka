@@ -38,6 +38,12 @@
     flex-basis: calc((100% - 32px) / 3);
   }
 
+  &:not(:last-child) {
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
+
   &__img {
     overflow: hidden;
   }
