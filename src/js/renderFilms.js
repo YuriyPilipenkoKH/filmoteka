@@ -71,24 +71,19 @@ export function renderMoviesMarkup(data) {
       genres,
       overview,
     } = response.data;
+    const posterUrl = poster_path
+      ? `${IMG_URL}${poster_path}`
+      : DEFAULT_POSTER_URL;
     const movieMarkup = `<div class="modal__card-thumb">
-    <img class="modal__image" src="${IMG_URL + poster_path}" alt="film-image" />
+    <img class="modal__image" src="${posterUrl}" alt="film-image" />
   </div>
   <div class="modal__info">
     <h2 class="modal__title">${title}</h2>
-
-    <div class="modal__list-box">
-      <ul class="modal__list modal__list--first-list">
-        <li>Vote / Votes</li>
-        <li>Popularity</li>
-        <li>Original Title</li>
-        <li>Genre</li>
-      </ul>
       <ul class="modal__list">
         <li>${vote_average} / ${vote_count}</li>
         <li>${popularity}</li>
         <li>${original_title}</li>
-        <li>${genres.map(genre => genre.name.split)}</li>
+        <li>${genres.map(genre => genre.name).join(', ')}</li>
       </ul>
     </div>
 
