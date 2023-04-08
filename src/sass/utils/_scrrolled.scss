@@ -1,0 +1,26 @@
+.back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 85px;
+  border: none;
+  background-color: transparent;
+  padding: 8px;
+
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  background-color: #281e7235;
+}
+
+.back-to-top:hover .fingerUp {
+  stroke: 2px;
+  stop-color: #ddd;
+  /* fill: #ddd; */
+}
+
+.back-to-top.visible {
+  display: block;
+}
