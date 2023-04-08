@@ -36,11 +36,11 @@
   }
 }
 
-// .backdrop__modal-team.is-hidden {
-//   opacity: 0;
-//   visibility: hidden;
-//   pointer-events: none;
-// }
+.backdrop__modal-team.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 
 .close__modal-team {
   position: absolute;
