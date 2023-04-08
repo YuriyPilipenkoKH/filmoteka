@@ -15,7 +15,7 @@ function onCardClick(e) {
 function onCloseModal() {
   refs.modal.classList.toggle('is-hidden');
 }
-//-----
+//----- Закриття модалки по бекдропу
 function onBackdropClose(e) {
   if (e.currentTarget === e.target) {
     onCloseModal();
