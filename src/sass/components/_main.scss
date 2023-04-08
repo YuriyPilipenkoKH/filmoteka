@@ -48,6 +48,14 @@
   &__img {
     overflow: hidden;
     border-radius: 5px;
+    height: 402px;
+    @media screen and (min-width: 768px) {
+      height: 455px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      height: 574px;
+    }
   }
 
   &__info {
@@ -75,15 +83,14 @@
   }
 
   &__img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
     transition: transform 0.5s;
   }
 
   &__info p {
     transition: text-shadow 0.5s;
-  }
-
-  &__info:hover {
-    text-shadow: 1px 1px 2px black;
   }
 
   .film-card__link:hover img,
