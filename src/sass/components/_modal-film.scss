@@ -1,4 +1,6 @@
-.backdrop__film-modal {
+.container {
+}
+.backdrop {
   position: fixed;
   top: 0;
   left: 0;
@@ -11,7 +13,6 @@
   pointer-events: none;
 }
 .modal {
-  z-index: 100;
   padding: 40px 20px;
 
   position: absolute;
@@ -44,8 +45,8 @@
   background-color: #ffffff;
   border: transparent;
 }
-// .modal__icon {
-// }
+.modal__icon {
+}
 .modal__container {
   @media screen and (min-width: 768px) {
     display: flex;
@@ -77,8 +78,8 @@
   }
 }
 .modal__image {
-  height: 100%;
   width: 100%;
+  height: auto;
 
   object-fit: cover;
   object-position: center;
@@ -89,10 +90,9 @@
 .modal__info {
   margin-top: 20px;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
   color: #000000;
-  font-weight: 500;
 
   @media screen and (min-width: 768px) {
     width: 264px;
