@@ -9,7 +9,5 @@ export function onFormSubmit(e) {
     Notify.info('Enter something');
     return;
   }
-  fetchMoviesByName(searchQuery)
-    .then(renderMoviesMarkup)
-    .catch(error => Notify.error('Error'));
+  fetchMoviesByName(searchQuery).then(renderMoviesMarkup).catch(console.log);
 }
