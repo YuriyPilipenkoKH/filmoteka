@@ -1,0 +1,74 @@
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.gallery-list {
+  margin-top: 20px;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    column-gap: 16px;
+    margin-top: 32px;
+  }
+}
+
+.film-card {
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 32px) / 2);
+  }
+
+  @media screen and (min-width: 1024px) {
+    flex-basis: calc((100% - 32px) / 3);
+  }
+
+  &:not(:last-child) {
+    @media screen and (max-width: 768px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__img {
+    overflow: hidden;
+  }
+
+  &__info {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.16;
+    padding-top: 10px;
+    color: var(--current-color);
+
+    @media screen and (min-width: 768px) {
+      line-height: 1.33;
+      padding-top: 8px;
+    }
+
+    @media screen and (min-width: 1024px) {
+      font-size: 20px;
+      line-height: 1.2;
+      padding-top: 12px;
+    }
+  }
+
+  &__title {
+    color: var(--secondary-text-color);
+    text-transform: uppercase;
+  }
+}

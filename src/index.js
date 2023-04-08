@@ -1,7 +1,13 @@
-import './sass/index.scss'
-
-import './js/refs'
-import './js/apiSevice'
-import './js/renderFilms'
-import './js/modalFilm'
-import './js/modalTeam'
+import './sass/index.scss';
+import './js/apiSevice';
+import './js/renderFilms';
+import { renderMoviesMarkup } from './js/renderFilms';
+import { refs } from './js/refs';
+import { fetchTrendingMovies } from './js/fetchTrendingMovies';
+import { fetchMoviesByName } from './js/fetchMoviesByName';
+import { onFormSubmit } from './js/onSearchFormSubmit';
+import { getMoviesGenres } from './js/getMoviesGenres';
+import './js/modalTeam';
+getMoviesGenres();
+fetchTrendingMovies().then(renderMoviesMarkup);
+refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
