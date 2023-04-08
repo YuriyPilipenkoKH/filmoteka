@@ -146,6 +146,11 @@
   }
 }
 
+.header__btn-home.current,
+.header__btn-library.current {
+  color: #ffffff;
+  background: #000000;
+}
 .header__btn-home {
   display: flex;
   align-items: center;
@@ -188,8 +193,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #ffffff;
-  background: #000000;
+  color: #000000;
+  background: #ffffff;
   @media screen and (min-width: 768px) {
     width: 109px;
     height: 38px;
