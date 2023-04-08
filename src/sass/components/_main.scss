@@ -12,9 +12,11 @@
   overflow: hidden;
 }
 
-.gallery-list {
-  margin-top: 20px;
+.gallery {
+  padding-top: 32px;
+}
 
+.gallery-list {
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -23,7 +25,6 @@
 
   @media screen and (min-width: 1024px) {
     column-gap: 16px;
-    margin-top: 32px;
   }
 }
 
@@ -47,14 +48,6 @@
   &__img {
     overflow: hidden;
     border-radius: 5px;
-  }
-
-  &__img img {
-    transition: transform 0.5s;
-  }
-
-  &__img img:hover {
-    transform: scale(1.25);
   }
 
   &__info {
@@ -81,11 +74,27 @@
     text-transform: uppercase;
   }
 
-  &__info {
+  &__img img {
+    transition: transform 0.5s;
+  }
+
+  // &__img img:hover {
+  //   transform: scale(1.25);
+  // }
+
+  &__info p {
     transition: text-shadow 0.5s;
   }
 
   &__info:hover {
     text-shadow: 1px 1px 2px black;
+  }
+
+  .film-card__link:hover img {
+    transform: scale(1.25);
+  }
+
+  .film-card__link:hover p {
+    text-shadow: 1px 1px 2px #292929;
   }
 }

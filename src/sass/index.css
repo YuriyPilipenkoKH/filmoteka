@@ -333,9 +333,10 @@ img {
   overflow: hidden;
 }
 
-.gallery-list {
-  margin-top: 20px;
+.gallery {
+  padding-top: 32px;
 }
+
 @media screen and (min-width: 768px) {
   .gallery-list {
     display: flex;
@@ -347,7 +348,6 @@ img {
   .gallery-list {
     -moz-column-gap: 16px;
          column-gap: 16px;
-    margin-top: 32px;
   }
 }
 
@@ -373,12 +373,6 @@ img {
   overflow: hidden;
   border-radius: 5px;
 }
-.film-card__img img {
-  transition: transform 0.5s;
-}
-.film-card__img img:hover {
-  transform: scale(1.25);
-}
 .film-card__info {
   font-weight: 500;
   font-size: 12px;
@@ -403,11 +397,20 @@ img {
   color: var(--secondary-text-color);
   text-transform: uppercase;
 }
-.film-card__info {
+.film-card__img img {
+  transition: transform 0.5s;
+}
+.film-card__info p {
   transition: text-shadow 0.5s;
 }
 .film-card__info:hover {
   text-shadow: 1px 1px 2px black;
+}
+.film-card .film-card__link:hover img {
+  transform: scale(1.25);
+}
+.film-card .film-card__link:hover p {
+  text-shadow: 1px 1px 2px #292929;
 }
 
 .footer {
@@ -469,9 +472,10 @@ img {
   overflow: hidden;
 }
 
-.gallery-list {
-  margin-top: 20px;
+.gallery {
+  padding-top: 32px;
 }
+
 @media screen and (min-width: 768px) {
   .gallery-list {
     display: flex;
@@ -483,7 +487,6 @@ img {
   .gallery-list {
     -moz-column-gap: 16px;
          column-gap: 16px;
-    margin-top: 32px;
   }
 }
 
@@ -509,12 +512,6 @@ img {
   overflow: hidden;
   border-radius: 5px;
 }
-.film-card__img img {
-  transition: transform 0.5s;
-}
-.film-card__img img:hover {
-  transform: scale(1.25);
-}
 .film-card__info {
   font-weight: 500;
   font-size: 12px;
@@ -539,9 +536,18 @@ img {
   color: var(--secondary-text-color);
   text-transform: uppercase;
 }
-.film-card__info {
+.film-card__img img {
+  transition: transform 0.5s;
+}
+.film-card__info p {
   transition: text-shadow 0.5s;
 }
 .film-card__info:hover {
   text-shadow: 1px 1px 2px black;
+}
+.film-card .film-card__link:hover img {
+  transform: scale(1.25);
+}
+.film-card .film-card__link:hover p {
+  text-shadow: 1px 1px 2px #292929;
 }/*# sourceMappingURL=index.css.map */
