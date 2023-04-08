@@ -7,9 +7,12 @@ import { fetchTrendingMovies } from './js/fetchTrendingMovies';
 import { fetchMoviesByName } from './js/fetchMoviesByName';
 import { onFormSubmit } from './js/onSearchFormSubmit';
 import { getMoviesGenres } from './js/getMoviesGenres';
+import { onGalleryItemClick } from './js/onGalleryItemClick';
 import './js/modalTeam';
 getMoviesGenres();
 fetchTrendingMovies().then(renderMoviesMarkup);
 refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
+refs.galleryList.addEventListener('click', onGalleryItemClick);
+
 import './js/modalFilm';
 import './js/scrolled';
