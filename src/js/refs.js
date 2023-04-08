@@ -3,5 +3,5 @@ export const refs = {
   moviesSearchForm: document.querySelector('.header__form'),
   linkByStudents: document.querySelector('.about-team'),
   backdropModalTeam: document.querySelector('.backdrop__modal-team'),
-  movieModal: document.querySelector('.modal__card-thumb'),
+  movieModal: document.querySelector('.modal__container'),
 };

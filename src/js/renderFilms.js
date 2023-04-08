@@ -79,6 +79,13 @@ export function renderMoviesMarkup(data) {
   </div>
   <div class="modal__info">
     <h2 class="modal__title">${title}</h2>
+    <div class="modal__list-box">
+      <ul class="modal__list modal__list--first-list">
+        <li>Vote / Votes</li>
+        <li>Popularity</li>
+        <li>Original Title</li>
+        <li>Genre</li>
+      </ul>
       <ul class="modal__list">
         <li>${vote_average} / ${vote_count}</li>
         <li>${popularity}</li>
