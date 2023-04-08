@@ -46,6 +46,15 @@
 
   &__img {
     overflow: hidden;
+    border-radius: 5px;
+  }
+
+  &__img img {
+    transition: transform 0.5s;
+  }
+
+  &__img img:hover {
+    transform: scale(1.25);
   }
 
   &__info {
@@ -70,5 +79,13 @@
   &__title {
     color: var(--secondary-text-color);
     text-transform: uppercase;
+  }
+
+  &__info {
+    transition: text-shadow 0.5s;
+  }
+
+  &__info:hover {
+    text-shadow: 1px 1px 2px black;
   }
 }
