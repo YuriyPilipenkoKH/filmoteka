@@ -78,10 +78,6 @@
     transition: transform 0.5s;
   }
 
-  // &__img img:hover {
-  //   transform: scale(1.25);
-  // }
-
   &__info p {
     transition: text-shadow 0.5s;
   }
@@ -90,11 +86,13 @@
     text-shadow: 1px 1px 2px black;
   }
 
-  .film-card__link:hover img {
+  .film-card__link:hover img,
+  .film-card__link:focus img {
     transform: scale(1.25);
   }
 
-  .film-card__link:hover p {
+  .film-card__link:hover p,
+  .film-card__link:focus p {
     text-shadow: 1px 1px 2px #292929;
   }
 }
