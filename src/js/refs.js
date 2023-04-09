@@ -7,4 +7,5 @@ export const refs = {
   modal: document.querySelector('[data-modal]'),
   closeModalBtn: document.querySelector('[data-modal-close]'),
   backdropModalFilm: document.querySelector('.backdrop__modal-film'),
+  body: document.querySelector('body'),
 };
