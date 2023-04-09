@@ -13,3 +13,4 @@ fetchTrendingMovies().then(renderMoviesMarkup);
 refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
 import './js/modalFilm';
 import './js/scrolled';
+import './js/pagination-main';
