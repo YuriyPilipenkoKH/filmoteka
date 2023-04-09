@@ -130,15 +130,16 @@
     }
   }
 }
+
 .button {
   padding: 0;
-  border: 0;
   border-color: inherit;
+  border: transparent;
 }
+
 .header__btn-wrapper {
   display: flex;
-  // margin-bottom: 8px;
-  // padding-top: 14px;
+
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
     margin-top: 0;
@@ -162,6 +163,7 @@
   font-weight: 500;
   font-size: 12px;
   line-height: calc(12 / 14);
+  border: transparent;
   text-transform: uppercase;
   cursor: pointer;
   color: #000000;
@@ -169,7 +171,7 @@
   @media screen and (min-width: 768px) {
     width: 83px;
     height: 38px;
-    padding: 12px 24px;
+    padding: 10px 24px;
   }
   @media screen and (min-width: 1280px) {
     margin-left: 8px;
@@ -183,7 +185,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 113px;
+  min-width: 113px;
   height: 34px;
   margin-left: 4px;
   border-radius: 100px;
@@ -196,13 +198,13 @@
   color: #000000;
   background: #ffffff;
   @media screen and (min-width: 768px) {
-    width: 109px;
+    min-width: 109px;
     height: 38px;
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
   @media screen and (min-width: 1280px) {
     margin-left: 8px;
-    width: 117px;
+    min-width: 117px;
     height: 42px;
     padding: 14px 24px;
   }
@@ -210,9 +212,11 @@
 
 .header__form {
   display: flex;
-  max-width: 252px;
+  justify-content: space-between;
+  width: 252px;
+  background: #ffffff;
+  border-radius: 17px;
   @media screen and (min-width: 1280px) {
-    // max-width: 147px;
     height: 42px;
   }
 }
@@ -220,11 +224,10 @@
 .header__form-input {
   height: 34px;
   padding-left: 14px;
-  padding-right: 0;
-  border: 0;
+  border-radius: 17px;
+  border: transparent;
   outline: transparent;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
+
   @media screen and (min-width: 768px) {
     max-width: 120px;
     height: 38px;
@@ -242,7 +245,7 @@
   padding: 7px;
   cursor: pointer;
   background-color: #ffffff;
-  border: none;
+  border: transparent;
 
   justify-content: center;
   align-items: center;
@@ -332,6 +335,7 @@
 .header__logo-link {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .header__film-svg {
   display: inline-block;
