@@ -40,11 +40,15 @@ async function onGalleryItemClick(e) {
         <li>Genre</li>
       </ul>
       <ul class="modal__list">
-        <li>${vote_average} / ${vote_count}</li>
-        <li>${popularity}</li>
-        <li>${original_title}</li>
-        <li>${genres.map(genre => genre.name).join(', ')}</li>
-      </ul>
+  <li>
+    <span class="vote-average">${vote_average}</span>
+    <span class="modal__symbol">/</span>
+    <span class="vote-count">${vote_count}</span>
+  </li>
+  <li>${popularity}</li>
+  <li>${original_title}</li>
+  <li>${genres.map(genre => genre.name).join(', ')}</li>
+</ul>
     </div>
     <div>	
       <h3 class="modal__subtitle">About</h3>	
