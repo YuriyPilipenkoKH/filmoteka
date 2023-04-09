@@ -63,13 +63,3 @@ async function onGalleryItemClick(e) {
 }
 
 export { onGalleryItemClick };
-
-refs.movieModal.addEventListener('click', onModalClick);
-async function onModalClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
-    return;
-  }
-  const id = e.target.dataset.id;
-  const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
-  console.log(response);
-}
