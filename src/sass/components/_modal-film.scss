@@ -138,9 +138,12 @@
   @media screen and (max-width: 319px) {
     flex-wrap: wrap;
   }
+  @media screen and (min-width: 1280px) {
+    gap: 15px;
+  }
 }
 .modal__btn {
-  min-width: 120px;
+  min-width: 101px;
   height: 34px;
   padding: 10px 12px;
 
@@ -157,6 +160,9 @@
   justify-content: center;
   text-transform: uppercase;
 
+  @media screen and (min-width: 1280px) {
+    min-width: 120px;
+  }
   &:hover,
   &:focus {
     background: #b92f2c;
