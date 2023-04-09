@@ -57,3 +57,5 @@ async function onGalleryItemClick(e) {
   </div>`;
   refs.movieModal.innerHTML = movieMarkup;
 }
+
+export { onGalleryItemClick };
