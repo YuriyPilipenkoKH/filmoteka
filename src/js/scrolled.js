@@ -1,4 +1,4 @@
-import { MoviesService } from './endlesScroll';
+// import { MoviesService } from './endlesScroll';
 
 // const moviesService = new MoviesService({
 //   page: 2,
