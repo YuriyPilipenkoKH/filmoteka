@@ -4,14 +4,13 @@ import { MoviesService } from './endlesScroll';
 //   page: 2,
 //   searchQueryInput: '',
 // });
-console.log(moviesService);
 
 window.addEventListener('scroll', onScroll);
 function onScroll() {
   const toTop = document.querySelector('.back-to-top');
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
-  moviesService.resetPage();
+
   if (scrolled > coords) {
     toTop.classList.add('visible');
   }
