@@ -32,19 +32,24 @@
   @media screen and (min-width: 1280px) {
     padding: 40px 12px;
     width: 806px;
+    height: 558px;
   }
 }
 .modal__close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 8px;
+  right: 8px;
   cursor: pointer;
   fill: black;
-  background-color: #ffffff;
-  border: transparent;
+  background-color: transparent;
+  border: none;
 }
-// .modal__icon {
-// }
+
 .modal__container {
   @media screen and (min-width: 768px) {
     display: flex;
@@ -56,27 +61,21 @@
   }
 }
 .modal__card-thumb {
-  width: 264px;
-  height: 357px;
-  outline: 2px solid tomato;
+  margin: auto;
+  width: 240px;
+  @media screen and (min-width: 768px) {
+    width: 264px;
+    height: 374px;
+  }
 
-  // @media screen and (max-width: 767px) {
-  //   height: 374px;
-  //   margin: auto;
-  // }
-
-  // @media screen and (min-width: 768px) {
-  // }
-
-  // @media screen and (min-width: 1280px) {
-  //   width: 375px;
-  //   height: 478px;
-  // }
+  @media screen and (min-width: 1280px) {
+    width: 375px;
+    height: 478px;
+  }
 }
 .modal__image {
   height: 100%;
   width: 100%;
-
   object-fit: cover;
   object-position: center;
 }
@@ -169,4 +168,27 @@
     color: #ffffff;
     border: 1px solid transparent;
   }
+}
+
+.vote-average {
+  padding: 1px 10px;
+  color: #ffffff;
+  background: #b92f2c;
+  border-radius: 5px;
+}
+.modal__symbol {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  color: #8c8c8c;
+}
+.vote-count {
+  padding: 1px 10px;
+  color: 000000;
+  background: #f7f7f7;
+  border-radius: 5px;
 }
