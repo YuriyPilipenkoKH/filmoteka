@@ -5,12 +5,13 @@ refs.backdropModalTeam.addEventListener('click', onBackdropClick);
 
 function openModal(e) {
   window.addEventListener('keydown', onEscKeyPress);
+  refs.body.style.overflow = 'hidden';
   refs.backdropModalTeam.classList.remove('is-hidden');
-  console.log(e.currentTarget);
 }
 
 function closeModal() {
   window.removeEventListener('keydown', onEscKeyPress);
+  refs.body.style.overflow = '';
   refs.backdropModalTeam.classList.add('is-hidden');
 }
 
