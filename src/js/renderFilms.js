@@ -15,10 +15,12 @@ function returnGenreName(genres, id) {
 export function renderMoviesMarkup(data) {
   const moviesArray = data.data.results;
   const genres = JSON.parse(localStorage.getItem('genres'));
+  console.log(moviesArray);
 
   const markup = moviesArray
-    .map(({ poster_path, title, genre_ids, id }) => {
+    .map(({ poster_path, title, genre_ids, id, release_date }) => {
       const genresCount = genre_ids.length;
+      const date = release_date.split('').splice(0, 4).join('');
       let genresToShow = '';
       const posterUrl = poster_path
         ? `${IMG_URL}${poster_path}`
@@ -30,15 +32,12 @@ export function renderMoviesMarkup(data) {
         genresToShow = `${returnGenreName(
           genres,
           genre_ids[0]
-        )} | ${returnGenreName(genres, genre_ids[1])}`;
-      } else if (genresCount === 3) {
+        )}, ${returnGenreName(genres, genre_ids[1])}`;
+      } else if (genresCount > 2) {
         genresToShow = `${returnGenreName(
           genres,
           genre_ids[0]
-        )}, ${returnGenreName(genres, genre_ids[1])} | ${returnGenreName(
-          genres,
-          genre_ids[2]
-        )}`;
+        )}, ${returnGenreName(genres, genre_ids[1])}, Other`;
       }
 
       return `<li class="film-card">
@@ -48,7 +47,7 @@ export function renderMoviesMarkup(data) {
         </div>
         <div class="film-card__info">
           <p class="film-card__title">${title}</p>
-          <p class="film-card__description">${genresToShow}</p>
+          <p class="film-card__description">${genresToShow} | ${date}</p>
         </div>
       </a>
     </li>`;
