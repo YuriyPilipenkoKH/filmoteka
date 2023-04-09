@@ -15,4 +15,8 @@ refs.galleryList.addEventListener('click', onGalleryItemClick);
 
 import './js/modalFilm';
 import './js/scrolled';
+
+
+import './js/endlesScroll';
 import './js/addMovieToLibriary';
+

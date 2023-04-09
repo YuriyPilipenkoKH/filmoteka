@@ -54,5 +54,6 @@ export function renderMoviesMarkup(response) {
     })
     .join('');
 
-  refs.galleryList.innerHTML = markup;
+  // refs.galleryList.innerHTML = markup;
+  refs.galleryList.insertAdjacentHTML('beforeend', markup);
 }
