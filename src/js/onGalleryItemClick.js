@@ -55,11 +55,21 @@ async function onGalleryItemClick(e) {
       <p class="modal__text">${overview}</p>	
     </div>	
     <div class="modal__buttons">	
-      <button class="modal__btn" type="button">add to Watched</button>	
-      <button class="modal__btn" type="button">add to queue</button>	
+      <button class="modal__btn" type="button" data-id="${id}">add to Watched</button>	
+      <button class="modal__btn" type="button" data-id="${id}">add to queue </button>	
     </div>	
   </div>`;
   refs.movieModal.innerHTML = movieMarkup;
 }
 
 export { onGalleryItemClick };
+
+refs.movieModal.addEventListener('click', onModalClick);
+async function onModalClick(e) {
+  if (e.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  const id = e.target.dataset.id;
+  const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
+  console.log(response);
+}
