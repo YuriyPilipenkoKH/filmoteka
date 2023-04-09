@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { startLoader, stopLoader } from './loader';
+
 const BASE_URL = 'https://api.themoviedb.org/';
 const API_KEY = '90c7ff0c6a89140d8ec65b5296dfcca2';
 export async function fetchMoviesByName(query) {
@@ -9,6 +11,7 @@ export async function fetchMoviesByName(query) {
     );
     if (response.data.results.length === 0) {
       Notify.info(`Nothing was found for your '${query}' request`);
+      stopLoader();
       return;
     }
     return response;
