@@ -13,6 +13,10 @@ async function onGalleryItemClick(e) {
   }
   const id = e.target.dataset.id;
   const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
+  const videoResponse = await axios(
+    `${BASE_URL}3/movie/${id}/videos?api_key=${API_KEY}`
+  );
+  const videoKey = videoResponse.data.results[0]?.key;
   // console.log(response);
   const {
     poster_path,
@@ -29,7 +33,18 @@ async function onGalleryItemClick(e) {
     : DEFAULT_POSTER_URL;
   const movieMarkup = `<div class="modal__card-thumb">
     <img class="modal__image" src="${posterUrl}" alt="film-image" />
+    <div class="trailer-overlay">
+    <a
+      class="trailer-link"
+      href="https://www.youtube.com/watch?v=${videoKey}"
+      target="_blank"
+    >
+      <svg class="play-icon">
+        <use href="../images/icons/sprite.svg#player"></use>
+      </svg>
+    </a>
   </div>
+
   <div class="modal__info">
     <h2 class="modal__title">${title}</h2>
     <div class="modal__list-box">
@@ -59,18 +74,11 @@ async function onGalleryItemClick(e) {
       <button class="modal__btn" type="button" name="queue" data-id="${id}">add to queue </button>	
     </div>	
   </div>`;
+
+
   refs.movieModal.innerHTML = movieMarkup;
 }
 
 export { onGalleryItemClick };
 
-// refs.movieModal.addEventListener('click', onModalClick);
 
-// async function onModalClick(e) {
-//   if (e.target.nodeName !== 'BUTTON') {
-//     return;
-//   }
-//   const id = e.target.dataset.id;
-//   const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
-//   console.log(response);
-// }
