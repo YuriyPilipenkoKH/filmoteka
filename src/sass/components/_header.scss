@@ -124,9 +124,10 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;
+    gap: 4px;
     @media screen and (min-width: 1280px) {
       padding-top: 0;
-      gap: 4px;
+      gap: 8px;
     }
   }
 }
@@ -135,6 +136,7 @@
   padding: 0;
   border-color: inherit;
   border: transparent;
+  background: transparent;
 }
 
 .header__btn-wrapper {
@@ -174,7 +176,6 @@
     padding: 10px 24px;
   }
   @media screen and (min-width: 1280px) {
-    margin-left: 8px;
     width: 99px;
     height: 42px;
     padding: 14px 32px;
@@ -215,8 +216,13 @@
   justify-content: space-between;
   width: 252px;
   background: #ffffff;
-  border-radius: 17px;
+  border-radius: 100px;
+  @media screen and (min-width: 768px) {
+    width: 165px;
+    height: 38px;
+  }
   @media screen and (min-width: 1280px) {
+    width: 187px;
     height: 42px;
   }
 }
@@ -224,7 +230,7 @@
 .header__form-input {
   height: 34px;
   padding-left: 14px;
-  border-radius: 17px;
+  border-radius: 100px;
   border: transparent;
   outline: transparent;
 
