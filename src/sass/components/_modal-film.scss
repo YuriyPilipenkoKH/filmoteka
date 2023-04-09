@@ -57,6 +57,7 @@
   }
 }
 .modal__card-thumb {
+  position: relative;
   margin: auto;
   width: 240px;
   @media screen and (min-width: 768px) {

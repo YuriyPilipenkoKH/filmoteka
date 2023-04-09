@@ -237,19 +237,21 @@ img {
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;
+    gap: 4px;
   }
 }
 @media screen and (min-width: 768px) and (min-width: 1280px) {
   .header__wrapper {
     padding-top: 0;
-    gap: 4px;
+    gap: 8px;
   }
 }
 
 .button {
   padding: 0;
-  border: 0;
   border-color: inherit;
+  border: transparent;
+  background: transparent;
 }
 
 .header__btn-wrapper {
@@ -279,6 +281,7 @@ img {
   font-weight: 500;
   font-size: 12px;
   line-height: 0.8571428571;
+  border: transparent;
   text-transform: uppercase;
   cursor: pointer;
   color: #000000;
@@ -288,12 +291,11 @@ img {
   .header__btn-home {
     width: 83px;
     height: 38px;
-    padding: 12px 24px;
+    padding: 10px 24px;
   }
 }
 @media screen and (min-width: 1280px) {
   .header__btn-home {
-    margin-left: 8px;
     width: 99px;
     height: 42px;
     padding: 14px 32px;
@@ -304,7 +306,7 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 113px;
+  min-width: 113px;
   height: 34px;
   margin-left: 4px;
   border-radius: 100px;
@@ -318,15 +320,15 @@ img {
 }
 @media screen and (min-width: 768px) {
   .header__btn-library {
-    width: 109px;
+    min-width: 109px;
     height: 38px;
-    padding: 12px 20px;
+    padding: 10px 20px;
   }
 }
 @media screen and (min-width: 1280px) {
   .header__btn-library {
     margin-left: 8px;
-    width: 117px;
+    min-width: 117px;
     height: 42px;
     padding: 14px 24px;
   }
@@ -334,10 +336,20 @@ img {
 
 .header__form {
   display: flex;
-  max-width: 252px;
+  justify-content: space-between;
+  width: 252px;
+  background: #ffffff;
+  border-radius: 100px;
+}
+@media screen and (min-width: 768px) {
+  .header__form {
+    width: 165px;
+    height: 38px;
+  }
 }
 @media screen and (min-width: 1280px) {
   .header__form {
+    width: 187px;
     height: 42px;
   }
 }
@@ -345,11 +357,9 @@ img {
 .header__form-input {
   height: 34px;
   padding-left: 14px;
-  padding-right: 0;
-  border: 0;
+  border-radius: 100px;
+  border: transparent;
   outline: transparent;
-  border-top-left-radius: 100px;
-  border-bottom-left-radius: 100px;
   color: #000000;
 }
 @media screen and (min-width: 768px) {
@@ -370,7 +380,7 @@ img {
   padding: 7px;
   cursor: pointer;
   background-color: #ffffff;
-  border: none;
+  border: transparent;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -480,6 +490,7 @@ img {
 .header__logo-link {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .header__film-svg {
@@ -737,7 +748,7 @@ img {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 280px;
+  width: 280px;
   transform: translate(-50%, -50%);
   background-color: white;
 }
@@ -747,26 +758,27 @@ img {
     padding: 45px 65px;
   }
 }
-@media screen and (max-width: 768px) {
-  .modal {
-    width: calc(100% - 30px);
-  }
-}
 @media screen and (min-width: 1280px) {
   .modal {
     padding: 40px 12px;
     width: 806px;
+    height: 558px;
   }
 }
 
 .modal__close-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 8px;
+  right: 8px;
   cursor: pointer;
   fill: black;
-  background-color: #ffffff;
-  border: transparent;
+  background-color: transparent;
+  border: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -782,9 +794,21 @@ img {
 }
 
 .modal__card-thumb {
-  width: 264px;
-  height: 357px;
-  outline: 2px solid tomato;
+  position: relative;
+  margin: auto;
+  width: 240px;
+}
+@media screen and (min-width: 768px) {
+  .modal__card-thumb {
+    width: 264px;
+    height: 374px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .modal__card-thumb {
+    width: 375px;
+    height: 478px;
+  }
 }
 
 .modal__image {
@@ -828,15 +852,10 @@ img {
   }
 }
 
-.modal__list-box {
-  display: flex;
-  gap: 40px;
-}
-
 .modal__list {
   display: flex;
-  gap: 8px;
   flex-direction: column;
+  gap: 8px;
   font-size: 12px;
   line-height: 133.333333%;
   /* 16/12 */
@@ -844,6 +863,7 @@ img {
 
 .modal__list--first-list {
   color: #8c8c8c;
+  width: 100px;
 }
 
 .modal__subtitle {
@@ -895,13 +915,41 @@ img {
   border: 1px solid transparent;
 }
 
+.vote-average {
+  padding: 1px 10px;
+  color: #ffffff;
+  background: #b92f2c;
+  border-radius: 5px;
+}
+
+.modal__symbol {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+  color: #8c8c8c;
+}
+
+.vote-count {
+  padding: 1px 10px;
+  color: 0;
+  background: #f7f7f7;
+  border-radius: 5px;
+}
+
+.modal__item {
+  display: flex;
+}
+
 .backdrop__modal-team {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   transition: 0.3s all;
   overflow-y: scroll;
 }
