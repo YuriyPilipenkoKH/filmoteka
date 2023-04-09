@@ -1,10 +1,17 @@
-// export { onScroll, onToTop, renderBtn };
+// import { MoviesService } from './endlesScroll';
+
+// const moviesService = new MoviesService({
+//   page: 2,
+//   searchQueryInput: '',
+// });
+
 
 window.addEventListener('scroll', onScroll);
 function onScroll() {
   const toTop = document.querySelector('.back-to-top');
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
+
   if (scrolled > coords) {
     toTop.classList.add('visible');
   }
@@ -13,6 +20,8 @@ function onScroll() {
   }
 }
 function onToTop() {
+  // moviesService.resetPage();
+  // location.reload();
   if (window.pageYOffset > 0) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }

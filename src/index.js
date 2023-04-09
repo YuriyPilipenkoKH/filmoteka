@@ -14,5 +14,9 @@ refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
 refs.galleryList.addEventListener('click', onGalleryItemClick);
 
 import './js/modalFilm';
-import './js/scrolled';
+// import './js/scrolled';
+
+
+// import './js/endlesScroll';
 import './js/addMovieToLibriary';
+

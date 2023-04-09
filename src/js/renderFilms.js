@@ -55,4 +55,5 @@ export function renderMoviesMarkup(response) {
     .join('');
 
   refs.galleryList.innerHTML = markup;
+
 }
