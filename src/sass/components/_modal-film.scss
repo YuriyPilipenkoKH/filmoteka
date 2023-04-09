@@ -16,17 +16,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 280px;
+  width: 280px;
   transform: translate(-50%, -50%);
   background-color: white;
 
   @media screen and (min-width: 768px) {
     width: 704px;
     padding: 45px 65px;
-  }
-
-  @media screen and (max-width: 768px) {
-    width: calc(100% - 30px);
   }
 
   @media screen and (min-width: 1280px) {
@@ -61,6 +57,7 @@
   }
 }
 .modal__card-thumb {
+  position: relative;
   margin: auto;
   width: 240px;
   @media screen and (min-width: 768px) {
@@ -105,15 +102,11 @@
     /* 35/30 */
   }
 }
-.modal__list-box {
-  display: flex;
-  gap: 40px;
-}
 
 .modal__list {
   display: flex;
-  gap: 8px;
   flex-direction: column;
+  gap: 8px;
   font-size: 12px;
   line-height: 133.333333%;
   /* 16/12 */
@@ -121,6 +114,7 @@
 
 .modal__list--first-list {
   color: #8c8c8c;
+  width: 100px;
 }
 .modal__subtitle {
   margin-bottom: 8px;
@@ -191,4 +185,7 @@
   color: 000000;
   background: #f7f7f7;
   border-radius: 5px;
+}
+.modal__item {
+  display: flex;
 }
