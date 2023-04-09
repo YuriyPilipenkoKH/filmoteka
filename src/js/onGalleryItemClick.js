@@ -77,10 +77,10 @@ async function onGalleryItemClick(e) {
     <p class="modal__text">${overview}</p>
   </div>
   <div class="modal__buttons">
-    <button class="modal__btn" type="button" data-id="${id}">
+    <button class="modal__btn" type="button" name="watched" data-id="${id}">
       add to Watched
     </button>
-    <button class="modal__btn" type="button" data-id="${id}">
+    <button class="modal__btn" type="button" name="queue" data-id="${id}">
       add to queue
     </button>
   </div>
