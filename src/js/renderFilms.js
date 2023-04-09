@@ -3,9 +3,13 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_POSTER_URL =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 function returnGenreName(genres, id) {
-  const genreToFind = genres.find(genre => genre.id === id);
-  if (genreToFind) {
-    return genreToFind.name;
+  try {
+    const genreToFind = genres.find(genre => genre.id === id);
+    if (genreToFind) {
+      return genreToFind.name;
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 export function renderMoviesMarkup(data) {
