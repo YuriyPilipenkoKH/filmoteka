@@ -8,6 +8,7 @@
 }
 .is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 .modal {
@@ -58,6 +59,7 @@
 }
 .modal__card-thumb {
   margin: auto;
+  height: 357px;
   width: 240px;
   @media screen and (min-width: 768px) {
     width: 264px;
@@ -114,6 +116,7 @@
 .modal__list--first-list {
   color: #8c8c8c;
   width: 100px;
+  flex: none;
 }
 .modal__subtitle {
   margin-bottom: 8px;
