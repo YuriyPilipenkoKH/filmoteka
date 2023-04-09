@@ -12,8 +12,8 @@ function returnGenreName(genres, id) {
     console.log(error);
   }
 }
-export function renderMoviesMarkup(data) {
-  const moviesArray = data.data.results;
+export function renderMoviesMarkup(response) {
+  const moviesArray = response.data.results;
   const genres = JSON.parse(localStorage.getItem('genres'));
   console.log(moviesArray);
 
