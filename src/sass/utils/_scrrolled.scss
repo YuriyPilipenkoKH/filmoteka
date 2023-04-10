@@ -21,6 +21,6 @@
   display: block;
 }
 
-.backdrop__modal-film:not(.is-hidden) ~ .back-to-top{
+.backdrop__modal-film:not(.is-hidden) #back { 
    display: none;
 }
