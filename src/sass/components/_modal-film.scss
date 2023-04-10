@@ -8,11 +8,13 @@
 }
 .is-hidden {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 .modal {
   padding: 40px 20px;
-
+  overflow-x: auto;
+  max-height: 100vh;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,6 +24,7 @@
 
   @media screen and (min-width: 768px) {
     width: 704px;
+    height: 552px;
     padding: 45px 65px;
   }
 
@@ -59,6 +62,7 @@
 .modal__card-thumb {
   position: relative;
   margin: auto;
+  height: 357px;
   width: 240px;
   @media screen and (min-width: 768px) {
     width: 264px;
@@ -115,6 +119,7 @@
 .modal__list--first-list {
   color: #8c8c8c;
   width: 100px;
+  flex: none;
 }
 .modal__subtitle {
   margin-bottom: 8px;
@@ -136,9 +141,12 @@
   @media screen and (max-width: 319px) {
     flex-wrap: wrap;
   }
+  @media screen and (min-width: 1280px) {
+    gap: 15px;
+  }
 }
 .modal__btn {
-  min-width: 120px;
+  min-width: 101px;
   height: 34px;
   padding: 10px 12px;
 
@@ -155,6 +163,9 @@
   justify-content: center;
   text-transform: uppercase;
 
+  @media screen and (min-width: 1280px) {
+    min-width: 120px;
+  }
   &:hover,
   &:focus {
     background: #b92f2c;
