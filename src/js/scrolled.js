@@ -15,7 +15,7 @@ function onScroll() {
   if (scrolled > coords) {
     toTop.classList.add('visible');
   }
-  if (scrolled < coords || !hidden) {
+  if (scrolled < coords) {
     toTop.classList.remove('visible');
   }
   
