@@ -4,7 +4,6 @@
 //   page: 2,
 //   searchQueryInput: '',
 // });
-const hidden  = document.querySelector('.is-hidden')
 
 window.addEventListener('scroll', onScroll);
 function onScroll() {
@@ -18,8 +17,6 @@ function onScroll() {
   if (scrolled < coords) {
     toTop.classList.remove('visible');
   }
-  
-
 }
 function onToTop() {
   // moviesService.resetPage();
