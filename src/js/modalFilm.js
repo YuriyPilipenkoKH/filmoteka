@@ -9,11 +9,13 @@ function onCardClick(e) {
   // console.log(e.target.nodeName);
   if (e.target.nodeName === 'IMG' || e.target.nodeName === 'P') {
     refs.modal.classList.toggle('is-hidden');
+    refs.body.style.overflow = 'hidden';
   }
 }
 //----- Закриття модалки
 function onCloseModal() {
   refs.modal.classList.toggle('is-hidden');
+  refs.body.style.overflow = '';
 }
 //----- Закриття модалки по бекдропу
 function onBackdropClose(e) {
