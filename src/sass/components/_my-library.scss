@@ -5,6 +5,9 @@
     border-radius: 5px; /* Закругление углов */
     border: none; /* Убрать бордер */
   }
+  .tui-pagination .tui-page-btn .tui-last {
+    display: none;
+  }
   .tui-pagination .tui-page-btn {
     border: none; /* Убрать бордер */
     display: inline-block;
@@ -19,6 +22,18 @@
         margin-right: 0px;
     }
   }
+  .tui-pagination .tui-last {
+    @media screen and ( max-width: 767px ) {
+      display: none;
+    }
+  }
+  
+  .tui-pagination .tui-first {
+    @media screen  and ( max-width: 767px ) {
+      display: none;
+    }
+  }
+  
   .tui-pagination .tui-is-selected, .tui-pagination strong {
     background-color: #B92F2C;
   }
