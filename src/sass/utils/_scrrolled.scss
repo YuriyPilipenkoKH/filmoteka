@@ -9,17 +9,13 @@
   fill: #950000;
   border-radius: 50%;
   cursor: pointer;
+  transition: var(--time) ease-in-out;
 }
 
 .back-to-top:hover {
   background-color: #281e7235;
 }
 
-.back-to-top:hover .fingerUp {
-  stroke: 2px;
-  stop-color: #ddd;
-  /* fill: #ddd; */
-}
 
 .back-to-top.visible {
   display: block;
