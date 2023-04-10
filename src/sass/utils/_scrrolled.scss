@@ -20,3 +20,7 @@
 .back-to-top.visible {
   display: block;
 }
+
+.backdrop__modal-film:not(.is-hidden) ~ .back-to-top{
+   display: none;
+}
