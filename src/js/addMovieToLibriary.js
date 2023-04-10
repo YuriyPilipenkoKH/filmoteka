@@ -10,6 +10,10 @@ const DEFAULT_POSTER_URL =
 
 refs.movieModal.addEventListener('click', onModalButtonClick);
 
+function onMovieCardClick() {}
+
+function chechIsMovieInLocalStorageItem() {}
+
 async function onModalButtonClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;

@@ -325,8 +325,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #ffffff;
-  background: #b92f2c;
+  color: #b92f2c;
+  background: #ffffff;
 
   @media screen and (min-width: 768px) {
     padding: 12px 24px;
@@ -336,6 +336,11 @@
     height: 42px;
     padding: 14px 24px;
   }
+}
+
+.header__btn-category--current {
+  color: #ffffff;
+  background: #b92f2c;
 }
 
 .header__logo-link {
