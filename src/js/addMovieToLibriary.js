@@ -12,7 +12,7 @@ refs.movieModal.addEventListener('click', onModalButtonClick);
 
 function onMovieCardClick() {}
 
-function chechIsMovieInLocalStorageItem() {}
+function checkIsMovieInLocalStorageItem() {}
 
 async function onModalButtonClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
