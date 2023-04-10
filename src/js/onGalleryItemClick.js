@@ -13,6 +13,10 @@ async function onGalleryItemClick(e) {
   }
   const id = e.target.dataset.id;
   const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
+  const videoResponse = await axios(
+    `${BASE_URL}3/movie/${id}/videos?api_key=${API_KEY}`
+  );
+  const videoKey = videoResponse.data.results[0]?.key;
   // console.log(response);
   const {
     poster_path,
@@ -29,36 +33,59 @@ async function onGalleryItemClick(e) {
     : DEFAULT_POSTER_URL;
   const movieMarkup = `<div class="modal__card-thumb">
     <img class="modal__image" src="${posterUrl}" alt="film-image" />
+    <div class="trailer-overlay">
+    <a
+      class="trailer-link"
+      href="https://www.youtube.com/watch?v=${videoKey}"
+      target="_blank"
+    >
+      <svg class="play-icon">
+        <use href="../images/icons/sprite.svg#player"></use>
+      </svg>
+    </a>
   </div>
-  <div class="modal__info">
-    <h2 class="modal__title">${title}</h2>
-    <div class="modal__list-box">
-      <ul class="modal__list modal__list--first-list">
-        <li>Vote / Votes</li>
-        <li>Popularity</li>
-        <li>Original Title</li>
-        <li>Genre</li>
-      </ul>
-      <ul class="modal__list">
-  <li>
-    <span class="vote-average">${vote_average}</span>
-    <span class="modal__symbol">/</span>
-    <span class="vote-count">${vote_count}</span>
-  </li>
-  <li>${popularity}</li>
-  <li>${original_title}</li>
-  <li>${genres.map(genre => genre.name).join(', ')}</li>
-</ul>
-    </div>
-    <div>	
-      <h3 class="modal__subtitle">About</h3>	
-      <p class="modal__text">${overview}</p>	
-    </div>	
-    <div class="modal__buttons">	
-      <button class="modal__btn" type="button" data-id="${id}">add to Watched</button>	
-      <button class="modal__btn" type="button" data-id="${id}">add to queue </button>	
-    </div>	
-  </div>`;
+</div>
+<div class="modal__info">
+  <h2 class="modal__title">${title}</h2>
+  
+    <ul class="modal__list">
+      <li class="modal__item">
+        <p class="modal__list--first-list">Vote / Votes</p>
+        <p>
+          <span class="vote-average">${vote_average}</span><span> / </span><span
+            class="vote-count"
+            >${vote_count}</span
+          >
+        </p>
+      </li>
+      <li class="modal__item">
+        <p class="modal__list--first-list">Popularity</p>
+        <p>${popularity}</p>
+      </li>
+      <li class="modal__item">
+        <p class="modal__list--first-list">Original Title</p>
+        <p>${original_title}</p>
+      </li>
+      <li class="modal__item">
+        <p class="modal__list--first-list">Genre</p>
+        <p>${genres.map(genre => genre.name).join(', ')}</p>
+      </li>
+    </ul>
+  
+  <div>
+    <h3 class="modal__subtitle">About</h3>
+    <p class="modal__text">${overview}</p>
+  </div>
+  <div class="modal__buttons">
+    <button class="modal__btn" type="button" name="watched" data-id="${id}">
+      add to Watched
+    </button>
+    <button class="modal__btn" type="button" name="queue" data-id="${id}">
+      add to queue
+    </button>
+  </div>
+</div>
+`;
   refs.movieModal.innerHTML = movieMarkup;
 }
 

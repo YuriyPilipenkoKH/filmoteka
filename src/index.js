@@ -4,7 +4,6 @@ import './js/renderFilms';
 import { renderMoviesMarkup } from './js/renderFilms';
 import { refs } from './js/refs';
 import { fetchTrendingMovies } from './js/fetchTrendingMovies';
-import { fetchMoviesByName } from './js/fetchMoviesByName';
 import { onFormSubmit } from './js/onSearchFormSubmit';
 import { getMoviesGenres } from './js/getMoviesGenres';
 import { onGalleryItemClick } from './js/onGalleryItemClick';
@@ -16,5 +15,8 @@ refs.galleryList.addEventListener('click', onGalleryItemClick);
 
 import './js/modalFilm';
 import './js/scrolled';
+
+
+import './js/addMovieToLibriary';
+
 import './js/pagination-main';
-import './js/endlesScroll';
