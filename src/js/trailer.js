@@ -35,8 +35,12 @@ export async function onTrailerBtnClick(id) {
       ></iframe>`;
     refs.trailerWindow.innerHTML = videoMarkup;
     const trailerVideo = refs.trailerWindow.querySelector('.trailer-video');
-    refs.trailerBackdrop.classList.remove('visually-hidden');
+    // refs.trailerBackdrop.classList.remove('visually-hidden');
     trailerVideo.src += '?autoplay=1';
+    refs.modal.classList.add('is-hidden');
+    refs.trailerBackdrop.classList.toggle('is-hidden');
+    refs.body.style.overflow = 'hidden';
+    document.addEventListener('keydown', onEscKeyPress);
   } else {
     Notify.info(`Sorry. 👀 There is no trailer for this movie yet.`);
   }
