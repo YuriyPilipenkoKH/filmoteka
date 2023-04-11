@@ -1,935 +1,16 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import '../sass/components/_my-library.scss';
+import { refs } from './refs';
 
-const masiw = [
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/wybmSmviUXxlBmX44gtpow5Y9TB.jpg',
-    id: 594767,
-    title: 'Shazam! Fury of the Gods',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/eSVu1FvGPy86TDo4hQbpuHx55DJ.jpg',
-    id: 700391,
-    title: '65',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/aityu1Gma509jInlspHstEt8Jg0.jpg',
-    id: 736790,
-    title: 'Chupa',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/s16H6tpK2utvwDtzZ8Qy4qm5Emw.jpg',
-    id: 76600,
-    title: 'Avatar: The Way of Water',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/iw0Na1UBHgA5BgifwmQ8vKhlWgA.jpg',
-    id: 502356,
-    title: 'The Super Mario Bros. Movie',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/7TdVWAO7vV9j1OLDq1hQJS3pb4U.jpg',
-    id: 739405,
-    title: 'Operation Fortune: Ruse de Guerre',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5i6SjyDbDWqyun8klUuCxrlFbyw.jpg',
-    id: 677179,
-    title: 'Creed III',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/oncxGpXbkM4MK5f7wzYZNDLd1uU.jpg',
-    id: 830896,
-    title: 'The Portable Door',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/5deKXeVmu3G8821gV8DtKHmRd6r.jpg',
-    id: 958196,
-    title: 'Inside',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/gslT8t964rYXyqRcqrxFh77ikyb.jpg',
-    id: 640146,
-    title: 'Ant-Man and the Wasp: Quantumania',
-    original_language: 'en',
-  },
-  {
-    adult: false,
-    backdrop_path: '/i8dshLvq4LE3s0v8PrkDdUyb1ae.jpg',
-    id: 603692,
-    title: 'John Wick: Chapter 4',
-    original_language: 'en',
-  },
-];
+let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
+let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
+
+const DEFAULT_POSTER_URL =
+  'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+
 const itemsPerPage = 20;
-const totalItems = masiw.length;
+const totalItems = moviesInWatched.length;
 const totalPages = Math.ceil(totalItems / itemsPerPage);
 const ul = document.querySelector('.gallery-list');
 
@@ -948,6 +29,7 @@ const pagination = new Pagination(paginationElement, {
     page: '<a href="#" class="tui-page-btn">{{page}}</a>',
     currentPage:
       '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+
     disabledMoveButton:
       '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
       '<span class="tui-ico-{{type}}">{{type}}</span>' +
@@ -960,32 +42,104 @@ const pagination = new Pagination(paginationElement, {
   usageStatistics: false,
 });
 
+function renderMovieCardsToWatched() {
+  pagination.on('afterMove', function (eventData) {
+    ul.innerHTML = '';
 
+    const startIdx = (eventData.page - 1) * itemsPerPage;
+    const endIdx = startIdx + itemsPerPage;
+
+    const data = moviesInWatched;
+
+    const moviesArray = data.slice(startIdx, endIdx);
+
+    const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+    const markup = moviesArray
+      .map(({ poster_path, title, genres, id, release_date }) => {
+        const date = release_date.split('').splice(0, 4).join('');
+        let genresToShow = '';
+        const genresCount = genres.length;
+        const posterUrl = poster_path
+          ? `${IMG_URL}${poster_path}`
+          : DEFAULT_POSTER_URL;
+
+        if (genresCount === 1) {
+          genresToShow = `${genres[0].name}`;
+        } else if (genresCount === 2) {
+          genresToShow = `${genres[0].name}, ${genres[1].name}`;
+        } else if (genresCount > 2) {
+          genresToShow = `${genres[0].name}, ${genres[1].name}, other`;
+        }
+
+        return `<li class="film-card">
+      <a href="modal-film.html" class="film-card__link" >
+        <div class="film-card__img">
+          <img src="${posterUrl}" alt="${title}" loading="lazy" data-id="${id}"/>
+        </div>
+        <div class="film-card__info">
+          <p class="film-card__title">${title}</p>
+          <p class="film-card__description">${genresToShow} | ${date}</p>
+        </div>
+      </a>
+    </li>`;
+      })
+      .join('');
+
+    refs.galleryList.innerHTML = markup;
+  });
+
+  // Load the first page when the page is loaded
+  pagination.movePageTo(1);
+}
 // Render the markup only when the user clicks on a page link
-pagination.on('afterMove', function (eventData) {
-  ul.innerHTML = '';
+function renderMovieCardsToQueue() {
+  pagination.on('afterMove', function (eventData) {
+    ul.innerHTML = '';
 
-  const startIdx = (eventData.page - 1) * itemsPerPage;
-  const endIdx = startIdx + itemsPerPage;
+    const startIdx = (eventData.page - 1) * itemsPerPage;
+    const endIdx = startIdx + itemsPerPage;
 
-  const data = masiw;
+    const data = moviesInQueue;
 
-  const items = data.slice(startIdx, endIdx);
+    const moviesArray = data.slice(startIdx, endIdx);
 
-  markup = items
-    .map(page => {
-      return `  
-      <div class="info">
-        <p class="info-item">
-          <b>likes</b>${page.title}
-        </p>
-      </div> 
-    `;
-    })
-    .join('');
+    const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+    const markup = moviesArray
+      .map(({ poster_path, title, genres, id, release_date }) => {
+        const date = release_date.split('').splice(0, 4).join('');
+        let genresToShow = '';
+        const genresCount = genres.length;
+        const posterUrl = poster_path
+          ? `${IMG_URL}${poster_path}`
+          : DEFAULT_POSTER_URL;
 
-  ul.innerHTML = markup;
-});
+        if (genresCount === 1) {
+          genresToShow = `${genres[0].name}`;
+        } else if (genresCount === 2) {
+          genresToShow = `${genres[0].name}, ${genres[1].name}`;
+        } else if (genresCount > 2) {
+          genresToShow = `${genres[0].name}, ${genres[1].name}, other`;
+        }
 
-// Load the first page when the page is loaded
-pagination.movePageTo(1);
+        return `<li class="film-card">
+      <a href="modal-film.html" class="film-card__link" >
+        <div class="film-card__img">
+          <img src="${posterUrl}" alt="${title}" loading="lazy" data-id="${id}"/>
+        </div>
+        <div class="film-card__info">
+          <p class="film-card__title">${title}</p>
+          <p class="film-card__description">${genresToShow} | ${date}</p>
+        </div>
+      </a>
+    </li>`;
+      })
+      .join('');
+
+    refs.galleryList.innerHTML = markup;
+  });
+
+  // Load the first page when the page is loaded
+  pagination.movePageTo(1);
+}
+
+export { renderMovieCardsToQueue, renderMovieCardsToWatched };

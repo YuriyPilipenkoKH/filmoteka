@@ -8,116 +8,72 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_POSTER_URL =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
-refs.movieModal.addEventListener('click', onModalClick);
-async function onModalClick(e) {
+refs.movieModal.addEventListener('click', onModalButtonClick);
+
+function onMovieCardClick() {}
+
+function checkIsMovieInLocalStorageItem() {}
+
+async function onModalButtonClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
+  const buttonToAddOrRemoveMovie = e.target;
   const id = e.target.dataset.id;
   const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
+  const movie = response.data;
 
   if (e.target.name === 'watched') {
-    console.log(response);
-    const savedInWatched = localStorage.getItem('watched');
-    const arrOfWatchedMovie = JSON.parse(savedInWatched) || [];
-    const arrOfMovieId = arrOfWatchedMovie.map(movie => movie.id);
-
-    if (arrOfMovieId.includes(response.data.id)) {
-      e.target.textContent = 'remove from watched';
-      e.target.classList.replace('add', 'remove');
-
+    if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
+      removeMoveiFromLocalStorageItem(
+        buttonToAddOrRemoveMovie,
+        'watched',
+        movie
+      );
       return;
     }
-
-    arrOfWatchedMovie.push(response.data);
-    localStorage.setItem('watched', JSON.stringify(arrOfWatchedMovie));
+    addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'watched', movie);
   } else if (e.target.name === 'queue') {
-    const savedInQueue = localStorage.getItem('queue');
-    const arrOfQueueMovie = JSON.parse(savedInQueue) || [];
-    const arrOfMovieId = arrOfQueueMovie.map(movie => movie.id);
-
-    if (arrOfMovieId.includes(response.data.id)) {
-      e.target.textContent = 'remove from queue';
-      e.target.classList.replace('add', 'remove');
-
+    if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
+      removeMoveiFromLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
       return;
     }
-
-    arrOfQueueMovie.push(response.data);
-    localStorage.setItem('queue', JSON.stringify(arrOfQueueMovie));
+    addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
   }
 }
 
-// arrOfWatchedMovie.push(response.data);
-// localStorage.setItem('watched', JSON.stringify(arrOfWatchedMovie));
+function removeMoveiFromLocalStorageItem(
+  clickedButton,
+  localStorageItemName,
+  selectedMovie
+) {
+  const arrOfMovies =
+    JSON.parse(localStorage.getItem(localStorageItemName)) || [];
 
-//     return arrOfWatchedMovie;
-//   } else if (e.target.name === 'queue') {
-//     const savedInQueue = localStorage.getItem('queue');
-//     const arrOfQueueMovie = JSON.parse(savedInQueue) || [];
-
-//     const arrOfMovieId = arrOfQueueMovie.map(movie => movie.id);
-
-//     if (arrOfMovieId.includes(response.data.id)) {
-//       e.target.textContent = 'remove from queue';
-//       e.target.classList.replace('add', 'remove');
-
-//       return;
-//     }
-
-//     arrOfQueueMovie.push(response.data);
-//     localStorage.setItem('queue', JSON.stringify(arrOfQueueMovie));
-
-//     return arrOfQueueMovie;
-//   }
-// }
-
-// function addMovieToQueue(movie) {
-//   const savedInQueue = localStorage.getItem('queue');
-//   const arrOfQueueMovie = JSON.parse(savedInQueue) || [];
-//   const arrOfMovieId = arrOfQueueMovie.map(movie => movie.id);
-
-//   if (arrOfMovieId.includes(movie.id)) {
-//     addToQueueBtnRef.textContent = 'remove from queue';
-//     addToQueueBtnRef.classList.replace('add', 'remove');
-
-//     return;
-//   }
-
-//   arrOfQueueMovie.push(movie);
-//   localStorage.setItem('queue', JSON.stringify(arrOfQueueMovie));
-
-//   return arrOfQueueMovie;
-// }
-
-function addMovieToWatched(movie) {
-  const savedInwatched = localStorage.getItem('watched');
-  const arrOfwatchedMovie = JSON.parse(savedInwatched) || [];
-
-  arrOfwatchedMovie.push(movie);
-  localStorage.setItem('watched', JSON.stringify(arrOfwatchedMovie));
-
-  return arrOfwatchedMovie;
+  const newArrOfMovies = arrOfMovies.filter(
+    movieInLocalStoregeItem => selectedMovie.id !== movieInLocalStoregeItem.id
+  );
+  localStorage.setItem(localStorageItemName, JSON.stringify(newArrOfMovies));
+  clickedButton.classList.remove('remove');
+  clickedButton.textContent = `add to ${localStorageItemName}`;
 }
 
-function removeMovieFromQueue(e) {
-  const savedInQueue = localStorage.getItem('queue');
-  let arrOfQueueMovie = JSON.parse(savedInQueue);
-  const newArrOfQueueMovie = arrOfQueueMovie.filter(
-    movieCard => movie.id !== movieCard.id
-  );
-  localStorage.setItem('queue', JSON.stringify(newArrOfQueueMovie));
+function addMovieToLocalStorageItem(
+  clickedButton,
+  localStorageItemName,
+  selectedMovie
+) {
+  const arrOfMovies =
+    JSON.parse(localStorage.getItem(localStorageItemName)) || [];
+  const arrOfMovieId = arrOfMovies.map(movie => movie.id);
+  if (arrOfMovieId.includes(selectedMovie.id)) {
+    clickedButton.textContent = `remove from ${localStorageItemName}`;
+    clickedButton.classList.add('remove');
+    return;
+  }
 
-  return newArrOfQueueMovie;
-}
-
-function removeMovieFromWatched(e) {
-  const savedInWatched = localStorage.getItem('watched');
-  let arrOfWatchedMovie = JSON.parse(savedInWatched);
-  const newArrOfWatchedMovie = arrOfWatchedMovie.filter(
-    movieCard => movie.id !== movieCard.id
-  );
-  localStorage.setItem('watched', JSON.stringify(newArrOfWatchedMovie));
-
-  return newArrOfWatchedMovie;
+  arrOfMovies.push(selectedMovie);
+  localStorage.setItem(localStorageItemName, JSON.stringify(arrOfMovies));
+  clickedButton.textContent = `remove from ${localStorageItemName}`;
+  clickedButton.classList.add('remove');
 }
