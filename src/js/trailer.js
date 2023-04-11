@@ -22,7 +22,6 @@ export async function onTrailerBtnClick(id) {
     return null;
   }
   videoKey = getKey();
-  console.log(getKey());
   if (videoKey) {
     const videoMarkup = `<iframe
         class="trailer-video"
