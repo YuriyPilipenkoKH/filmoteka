@@ -1,3 +1,4 @@
+import { checkIsMovieInLibrary } from './addMovieToLibriary';
 import { refs } from './refs';
 import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/';
@@ -77,11 +78,15 @@ async function onGalleryItemClick(e) {
     <p class="modal__text">${overview}</p>
   </div>
   <div class="modal__buttons">
-    <button class="modal__btn" type="button" name="watched" data-id="${id}">
-      add to Watched
+    <button class="modal__btn ${
+      checkIsMovieInLibrary(id, 'watched').class
+    }" type="button"  name="watched" data-id="${id}">
+      ${checkIsMovieInLibrary(id, 'watched').text}
     </button>
-    <button class="modal__btn" type="button" name="queue" data-id="${id}">
-      add to queue
+    <button class="modal__btn ${
+      checkIsMovieInLibrary(id, 'queue').class
+    }" type="button"   name="queue" data-id="${id}">
+      ${checkIsMovieInLibrary(id, 'queue').text}
     </button>
   </div>
 </div>

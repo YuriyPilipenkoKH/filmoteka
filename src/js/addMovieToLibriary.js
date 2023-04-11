@@ -77,3 +77,22 @@ function addMovieToLocalStorageItem(
   clickedButton.textContent = `remove from ${localStorageItemName}`;
   clickedButton.classList.add('remove');
 }
+
+export function checkIsMovieInLibrary(selectedMovieId, localStorageItemName) {
+  const arrOfMoviesInQueue =
+    JSON.parse(localStorage.getItem(localStorageItemName)) || [];
+  const arrOfMovieIdInQueue = arrOfMoviesInQueue.map(movie => movie.id);
+  let btnData = {
+    text: `add to ${localStorageItemName}`,
+    class: '',
+  };
+
+  if (arrOfMovieIdInQueue.includes(Number(selectedMovieId))) {
+    btnData = {
+      text: `remove from ${localStorageItemName}`,
+      class: 'remove',
+    };
+  }
+
+  return btnData;
+}
