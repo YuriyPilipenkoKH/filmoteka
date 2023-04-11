@@ -13,7 +13,8 @@ export async function onTrailerBtnClick(id) {
     for (let i = 0; i < obj.length; i += 1) {
       if (
         obj[i].name === 'Official Trailer' ||
-        obj[i].name.includes('Official Trailer')
+        obj[i].name.includes('Official Trailer') ||
+        obj[i].name.includes('Trailer')
       ) {
         return obj[i].key;
       }
