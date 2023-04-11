@@ -4,7 +4,6 @@
 //   page: 2,
 //   searchQueryInput: '',
 // });
-console.log(moviesService);
 
 window.addEventListener('scroll', onScroll);
 function onScroll() {
