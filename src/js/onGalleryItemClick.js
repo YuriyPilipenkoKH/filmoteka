@@ -37,7 +37,7 @@ async function onGalleryItemClick(e) {
       type="button"
     >
       <svg class="play-icon">
-        <use href="./images/icons/sprite.svg#player"></use>
+        <use href="./images/icons/sprite.svg#youtube-logo"></use>
       </svg>
     </button>
   </div>

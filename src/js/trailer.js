@@ -24,6 +24,7 @@ export async function onTrailerBtnClick(id) {
   console.log(getKey());
   if (videoKey) {
     const videoMarkup = `<iframe
+        class="trailer-video"
         width="100%"
         height="100%"
         src="https://www.youtube.com/embed/${videoKey}"
@@ -33,7 +34,9 @@ export async function onTrailerBtnClick(id) {
         allowfullscreen
       ></iframe>`;
     refs.trailerWindow.innerHTML = videoMarkup;
+    const trailerVideo = refs.trailerWindow.querySelector('.trailer-video');
     refs.trailerBackdrop.classList.remove('visually-hidden');
+    trailerVideo.src += '?autoplay=1';
   } else {
     Notify.info(`Sorry. 👀 There is no trailer for this movie yet.`);
   }
