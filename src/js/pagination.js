@@ -3,46 +3,47 @@ import 'tui-pagination/dist/tui-pagination.css';
 import '../sass/components/_my-library.scss';
 import { refs } from './refs';
 
-let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
-let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
-
-const DEFAULT_POSTER_URL =
-  'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
-
-const itemsPerPage = 20;
-const totalItems = moviesInWatched.length;
-const totalPages = Math.ceil(totalItems / itemsPerPage);
-const ul = document.querySelector('.gallery-list');
-
-// Create the pagination instance and attach the event listener
-const paginationElement = document.getElementById('pagination');
-
-const pagination = new Pagination(paginationElement, {
-  totalItems: totalItems,
-  itemsPerPage: itemsPerPage,
-  visiblePages: 5,
-  page: 1,
-  centerAlign: true,
-  firstItemClassName: 'tui-first-child',
-  lastItemClassName: 'tui-last-child',
-  template: {
-    page: '<a href="#" class="tui-page-btn">{{page}}</a>',
-    currentPage:
-      '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
-
-    disabledMoveButton:
-      '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
-      '<span class="tui-ico-{{type}}">{{type}}</span>' +
-      '</span>',
-    moreButton:
-      '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
-      '<span class="tui-ico-ellip">...</span>' +
-      '</a>',
-  },
-  usageStatistics: false,
-});
+// let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
+// let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
 
 function renderMovieCardsToWatched() {
+  let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
+
+  const DEFAULT_POSTER_URL =
+    'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+
+  const itemsPerPage = 20;
+  const totalItems = moviesInWatched.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const ul = document.querySelector('.gallery-list');
+
+  // Create the pagination instance and attach the event listener
+  const paginationElement = document.getElementById('pagination');
+
+  const pagination = new Pagination(paginationElement, {
+    totalItems: totalItems,
+    itemsPerPage: itemsPerPage,
+    visiblePages: 5,
+    page: 1,
+    centerAlign: true,
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
+    template: {
+      page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+      currentPage:
+        '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+
+      disabledMoveButton:
+        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</span>',
+      moreButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<span class="tui-ico-ellip">...</span>' +
+        '</a>',
+    },
+    usageStatistics: false,
+  });
   pagination.on('afterMove', function (eventData) {
     ul.innerHTML = '';
 
@@ -93,6 +94,42 @@ function renderMovieCardsToWatched() {
 }
 // Render the markup only when the user clicks on a page link
 function renderMovieCardsToQueue() {
+  let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
+  const DEFAULT_POSTER_URL =
+    'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+
+  const itemsPerPage = 20;
+  const totalItems = moviesInQueue.length;
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const ul = document.querySelector('.gallery-list');
+
+  // Create the pagination instance and attach the event listener
+  const paginationElement = document.getElementById('pagination');
+
+  const pagination = new Pagination(paginationElement, {
+    totalItems: totalItems,
+    itemsPerPage: itemsPerPage,
+    visiblePages: 5,
+    page: 1,
+    centerAlign: true,
+    firstItemClassName: 'tui-first-child',
+    lastItemClassName: 'tui-last-child',
+    template: {
+      page: '<a href="#" class="tui-page-btn">{{page}}</a>',
+      currentPage:
+        '<strong class="tui-page-btn tui-is-selected">{{page}}</strong>',
+
+      disabledMoveButton:
+        '<span class="tui-page-btn tui-is-disabled tui-{{type}}">' +
+        '<span class="tui-ico-{{type}}">{{type}}</span>' +
+        '</span>',
+      moreButton:
+        '<a href="#" class="tui-page-btn tui-{{type}}-is-ellip">' +
+        '<span class="tui-ico-ellip">...</span>' +
+        '</a>',
+    },
+    usageStatistics: false,
+  });
   pagination.on('afterMove', function (eventData) {
     ul.innerHTML = '';
 

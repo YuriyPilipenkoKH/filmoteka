@@ -1,5 +1,9 @@
 import { onGalleryItemClick } from './onGalleryItemClick';
 import { refs } from './refs';
+import {
+  renderMovieCardsToQueue,
+  renderMovieCardsToWatched,
+} from './pagination';
 
 import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/';
@@ -9,10 +13,6 @@ const DEFAULT_POSTER_URL =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
 refs.movieModal.addEventListener('click', onModalButtonClick);
-
-function onMovieCardClick() {}
-
-function checkIsMovieInLocalStorageItem() {}
 
 async function onModalButtonClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
@@ -30,15 +30,34 @@ async function onModalButtonClick(e) {
         'watched',
         movie
       );
+      if (document.querySelector('.libriary__gallery-list')) {
+        renderMovieCardsToWatched();
+        refs.modal.classList.toggle('is-hidden');
+      }
+
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'watched', movie);
+    if (document.querySelector('.libriary__gallery-list')) {
+      renderMovieCardsToWatched();
+      refs.modal.classList.toggle('is-hidden');
+    }
+    // renderMovieCardsToWatched();
   } else if (e.target.name === 'queue') {
     if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
       removeMoveiFromLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
+      if (document.querySelector('.libriary__gallery-list')) {
+        renderMovieCardsToQueue();
+        refs.modal.classList.toggle('is-hidden');
+      }
+
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
+    if (document.querySelector('.libriary__gallery-list')) {
+      renderMovieCardsToQueue();
+      refs.modal.classList.toggle('is-hidden');
+    }
   }
 }
 
