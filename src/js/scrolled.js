@@ -2,7 +2,7 @@
 
 // const moviesService = new MoviesService({
 //   page: 2,
-//   searchQueryInput: '',
+//   
 // });
 
 window.addEventListener('scroll', onScroll);

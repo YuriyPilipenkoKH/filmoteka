@@ -1,5 +1,5 @@
 import './sass/index.scss';
-import './js/apiSevice';
+import './js/apiServiceMovies';
 import './js/renderFilms';
 import { renderMoviesMarkup } from './js/renderFilms';
 import { refs } from './js/refs';
@@ -10,8 +10,11 @@ import { onGalleryItemClick } from './js/onGalleryItemClick';
 import './js/modalTeam';
 getMoviesGenres();
 fetchTrendingMovies().then(renderMoviesMarkup);
-refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
+
 refs.galleryList.addEventListener('click', onGalleryItemClick);
+
+import './js/onSearchByTrend';
+import './js/onSearchByName';
 
 import './js/modalFilm';
 import './js/scrolled';
