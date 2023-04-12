@@ -15,7 +15,7 @@ function onCardClick(e) {
 }
 
 //----- Закриття модалки
-function onCloseModal() {
+export function onCloseModal() {
   refs.modal.classList.toggle('is-hidden');
   refs.body.style.overflow = '';
   document.removeEventListener('keydown', onEscKeyPress);
@@ -28,7 +28,7 @@ function onBackdropClose(e) {
 }
 //----- Закриття модалки по Esc
 function onEscKeyPress(e) {
-   if (e.key === 'Escape') {
+  if (e.key === 'Escape') {
     onCloseModal();
   }
 }

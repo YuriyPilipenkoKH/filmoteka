@@ -14,25 +14,22 @@
           </button>
         </div>
         <div class="header__btn-wrapper">
-          <a href="./index.html"
-            ><button class="header__btn-home button" type="button">
-              HOME
-            </button></a
-          >
-          <a href="./my-library.html"
-            ><button class="header__btn-library button current" type="button">
-              MY LIBRARY
-            </button></a
-          >
+          <a href="./index.html" class="header__btn-home button">
+            HOME
+          </a>
+          <a href="./my-library.html" class="header__btn-library button current">
+            MY LIBRARY
+          </a>
         </div>
-        <form class="header__form">
+        <form class="header__form" id="library_submit">
           <input
             class="header__form-input"
             name="query"
             type="text"
             placeholder="Movie Search"
+            autocomplete="off"
           />
-          <button class="header__form-btn button" type="submit">
+          <button class="header__form-btn button" type="submit" >
             <svg class="header__form-svg">
               <use href="./images/icons/sprite.svg#search"></use>
             </svg>
@@ -41,10 +38,10 @@
       </div>
       <div class="header__btn-bottom">
         <div class="header__btn">
-          <button class="header__btn-watched button" type="button">
+          <button class="header__btn-watched button " type="button">
             WATCHED
           </button>
-          <button class="header__btn-queue button" type="button">QUEUE</button>
+          <button class="header__btn-queue button header__btn-category--current"  type="button">QUEUE</button>
         </div>
         <a class="header__logo-link" href="./index.html">
           <svg class="header__film-svg">

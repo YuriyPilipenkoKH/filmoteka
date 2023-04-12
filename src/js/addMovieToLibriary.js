@@ -1,5 +1,10 @@
+import { onCloseModal } from './modalFilm';
 import { onGalleryItemClick } from './onGalleryItemClick';
 import { refs } from './refs';
+import {
+  renderMovieCardsToQueue,
+  renderMovieCardsToWatched,
+} from './pagination';
 
 import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/';
@@ -10,35 +15,76 @@ const DEFAULT_POSTER_URL =
 
 refs.movieModal.addEventListener('click', onModalButtonClick);
 
-function onMovieCardClick() {}
-
-function checkIsMovieInLocalStorageItem() {}
-
 async function onModalButtonClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
+  const queueBtn = document.querySelector('.modal__btn-queue');
+  const watchedBtn = document.querySelector('.modal__btn-watched');
+
   const buttonToAddOrRemoveMovie = e.target;
   const id = e.target.dataset.id;
   const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
   const movie = response.data;
 
   if (e.target.name === 'watched') {
+    watchedBtn.classList.add('modal__btn--clicked');
+    queueBtn.classList.remove('modal__btn--clicked');
     if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
       removeMoveiFromLocalStorageItem(
         buttonToAddOrRemoveMovie,
         'watched',
         movie
       );
+      if (document.querySelector('.libriary__gallery-list')) {
+        renderMovieCardsToWatched();
+        if (
+          !queueBtn.classList.contains('remove') &&
+          !watchedBtn.classList.contains('remove')
+        ) {
+          onCloseModal();
+        }
+      }
+
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'watched', movie);
+    if (document.querySelector('.libriary__gallery-list')) {
+      renderMovieCardsToWatched();
+      if (
+        !queueBtn.classList.contains('remove') &&
+        !watchedBtn.classList.contains('remove')
+      ) {
+        onCloseModal();
+      }
+    }
   } else if (e.target.name === 'queue') {
+    queueBtn.classList.add('modal__btn--clicked');
+    watchedBtn.classList.remove('modal__btn--clicked');
     if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
       removeMoveiFromLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
+      if (document.querySelector('.libriary__gallery-list')) {
+        renderMovieCardsToQueue();
+        if (
+          !queueBtn.classList.contains('remove') &&
+          !watchedBtn.classList.contains('remove')
+        ) {
+          onCloseModal();
+        }
+      }
+
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
+    if (document.querySelector('.libriary__gallery-list')) {
+      renderMovieCardsToQueue();
+      if (
+        !queueBtn.classList.contains('remove') &&
+        !watchedBtn.classList.contains('remove')
+      ) {
+        onCloseModal();
+      }
+    }
   }
 }
 
@@ -76,4 +122,23 @@ function addMovieToLocalStorageItem(
   localStorage.setItem(localStorageItemName, JSON.stringify(arrOfMovies));
   clickedButton.textContent = `remove from ${localStorageItemName}`;
   clickedButton.classList.add('remove');
+}
+
+export function checkIsMovieInLibrary(selectedMovieId, localStorageItemName) {
+  const arrOfMoviesInQueue =
+    JSON.parse(localStorage.getItem(localStorageItemName)) || [];
+  const arrOfMovieIdInQueue = arrOfMoviesInQueue.map(movie => movie.id);
+  let btnData = {
+    text: `add to ${localStorageItemName}`,
+    class: '',
+  };
+
+  if (arrOfMovieIdInQueue.includes(Number(selectedMovieId))) {
+    btnData = {
+      text: `remove from ${localStorageItemName}`,
+      class: 'remove',
+    };
+  }
+
+  return btnData;
 }

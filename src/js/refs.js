@@ -8,4 +8,8 @@ export const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   backdropModalFilm: document.querySelector('.backdrop__modal-film'),
   body: document.querySelector('body'),
+  trailerWindow: document.querySelector('.trailer-window'),
+  trailerBtn: document.querySelector('.trailer-btn'),
+  trailerBackdrop: document.querySelector('.trailer-backdrop'),
+  librarySubmit: document.querySelector('#library_submit'),
 };
