@@ -19,7 +19,7 @@ async function onModalButtonClick(e) {
   if (
     // e.target.nodeName !== 'BUTTON' &&
     e.target.name !== 'watched' &&
-    e.target.name !== 'watched'
+    e.target.name !== 'queue'
   ) {
     return;
   }
