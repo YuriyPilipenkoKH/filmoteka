@@ -1,6 +1,7 @@
 import { checkIsMovieInLibrary } from './addMovieToLibriary';
 import { refs } from './refs';
 import axios from 'axios';
+import { onTrailerBtnClick } from './trailer';
 const BASE_URL = 'https://api.themoviedb.org/';
 const API_KEY = '90c7ff0c6a89140d8ec65b5296dfcca2';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
