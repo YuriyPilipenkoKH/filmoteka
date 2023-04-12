@@ -13,7 +13,7 @@ const container = document.getElementById('pagination');
 
 const pagination = new Pagination('pagination', {
   totalItems: 500,
-  itemsPerPage: 10,
+  itemsPerPage: 20,
   visiblePages: 5,
   page: 1,
 });
