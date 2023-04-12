@@ -1,3 +1,4 @@
+import { onCloseModal } from './modalFilm';
 import { onGalleryItemClick } from './onGalleryItemClick';
 import { refs } from './refs';
 import {
@@ -18,12 +19,17 @@ async function onModalButtonClick(e) {
   if (e.target.nodeName !== 'BUTTON') {
     return;
   }
+  const queueBtn = document.querySelector('.modal__btn-queue');
+  const watchedBtn = document.querySelector('.modal__btn-watched');
+
   const buttonToAddOrRemoveMovie = e.target;
   const id = e.target.dataset.id;
   const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
   const movie = response.data;
 
   if (e.target.name === 'watched') {
+    watchedBtn.classList.add('modal__btn--clicked');
+    queueBtn.classList.remove('modal__btn--clicked');
     if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
       removeMoveiFromLocalStorageItem(
         buttonToAddOrRemoveMovie,
@@ -32,7 +38,12 @@ async function onModalButtonClick(e) {
       );
       if (document.querySelector('.libriary__gallery-list')) {
         renderMovieCardsToWatched();
-        refs.modal.classList.toggle('is-hidden');
+        if (
+          !queueBtn.classList.contains('remove') &&
+          !watchedBtn.classList.contains('remove')
+        ) {
+          onCloseModal();
+        }
       }
 
       return;
@@ -40,15 +51,26 @@ async function onModalButtonClick(e) {
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'watched', movie);
     if (document.querySelector('.libriary__gallery-list')) {
       renderMovieCardsToWatched();
-      refs.modal.classList.toggle('is-hidden');
+      if (
+        !queueBtn.classList.contains('remove') &&
+        !watchedBtn.classList.contains('remove')
+      ) {
+        onCloseModal();
+      }
     }
-    // renderMovieCardsToWatched();
   } else if (e.target.name === 'queue') {
+    queueBtn.classList.add('modal__btn--clicked');
+    watchedBtn.classList.remove('modal__btn--clicked');
     if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
       removeMoveiFromLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
       if (document.querySelector('.libriary__gallery-list')) {
         renderMovieCardsToQueue();
-        refs.modal.classList.toggle('is-hidden');
+        if (
+          !queueBtn.classList.contains('remove') &&
+          !watchedBtn.classList.contains('remove')
+        ) {
+          onCloseModal();
+        }
       }
 
       return;
@@ -56,7 +78,12 @@ async function onModalButtonClick(e) {
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
     if (document.querySelector('.libriary__gallery-list')) {
       renderMovieCardsToQueue();
-      refs.modal.classList.toggle('is-hidden');
+      if (
+        !queueBtn.classList.contains('remove') &&
+        !watchedBtn.classList.contains('remove')
+      ) {
+        onCloseModal();
+      }
     }
   }
 }
