@@ -15,8 +15,6 @@ function returnGenreName(genres, id) {
 export function renderMoviesMarkup(response) {
   const moviesArray = response.data.results;
   const genres = JSON.parse(localStorage.getItem('genres'));
-  console.log(moviesArray);
-
   const markup = moviesArray
     .map(({ poster_path, title, genre_ids, id, release_date }) => {
       const genresCount = genre_ids.length;
@@ -55,5 +53,4 @@ export function renderMoviesMarkup(response) {
     .join('');
 
   refs.galleryList.innerHTML = markup;
-
 }
