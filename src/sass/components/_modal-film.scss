@@ -265,18 +265,18 @@
 }
 .modal__item {
   display: flex;
-.modal__btn:first-child {
-  @media screen and (max-width: 767px) {
-    width: 125px;
-    padding: 12px 10px;
+  .modal__btn:first-child {
+    @media screen and (max-width: 767px) {
+      width: 125px;
+      padding: 12px 10px;
+    }
+    @media screen and (min-width: 768px) {
+      width: 137px;
+      padding: 18px 12px;
+    }
+    @media screen and (min-width: 1280px) {
+      width: 165px;
+      padding: 14px 30px;
+    }
   }
-  @media screen and (min-width: 768px) {
-    width: 137px;
-    padding: 18px 12px;
-  }
-  @media screen and (min-width: 1280px) {
-    width: 165px;
-    padding: 14px 30px;
-  }
-
 }
