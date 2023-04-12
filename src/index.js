@@ -14,13 +14,12 @@ refs.galleryList.addEventListener('click', onGalleryItemClick);
 
 import './js/onSearchByTrend';
 import './js/onSearchByName';
-import './js/loader'
+import './js/loader';
 import './js/modalFilm';
 import './js/scrolled';
 import './js/modalTeam';
 
 import './js/addMovieToLibriary';
 
-import './js/pagination-main';
 import './js/fetchMovieTrailer';
 import './js/trailer';
