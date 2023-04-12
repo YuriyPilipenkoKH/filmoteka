@@ -15,7 +15,7 @@ async function onGalleryItemClick(e) {
       return;
     }
 
-    const id = e.target.closest('li').dataset.id;
+    const id = e.target.closest('IMG').dataset.id;
     const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
     const {
       poster_path,
