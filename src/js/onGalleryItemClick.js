@@ -41,7 +41,7 @@ async function onGalleryItemClick(e) {
       target="_blank"
     >
       <svg class="play-icon">
-        <use href="../images/icons/sprite.svg#player"></use>
+        <use href="./images/icons/sprite.svg#player"></use>
       </svg>
     </a>
     <button
