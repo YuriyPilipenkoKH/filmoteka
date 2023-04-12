@@ -1,6 +1,7 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import '../sass/components/_my-library.scss';
+import '../sass/components/_img-library.scss';
 import { refs } from './refs';
 
 // let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
@@ -8,8 +9,12 @@ import { refs } from './refs';
 
 function renderMovieCardsToWatched() {
   let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
-
-  const DEFAULT_POSTER_URL =
+  if (moviesInWatched.length === 0) {
+    const ul = document.querySelector('.gallery-list');
+    const markup = `<li class="img-library"><p class="text-library">Please select a movie on the main page</p></li>`
+    ul.innerHTML = markup;
+  } else {
+    const DEFAULT_POSTER_URL =
     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
   const itemsPerPage = 20;
@@ -91,11 +96,18 @@ function renderMovieCardsToWatched() {
 
   // Load the first page when the page is loaded
   pagination.movePageTo(1);
+  }
 }
 // Render the markup only when the user clicks on a page link
 function renderMovieCardsToQueue() {
   let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
-  const DEFAULT_POSTER_URL =
+  if (moviesInQueue.length === 0) {
+    const ul = document.querySelector('.gallery-list');
+    const markup = `<li class="img-library"><p class="text-library">Please select a movie on the main page</p></li>`
+    ul.innerHTML = markup;
+  }
+  else {
+    const DEFAULT_POSTER_URL =
     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
   const itemsPerPage = 20;
@@ -177,6 +189,7 @@ function renderMovieCardsToQueue() {
 
   // Load the first page when the page is loaded
   pagination.movePageTo(1);
+  }
 }
 
 export { renderMovieCardsToQueue, renderMovieCardsToWatched };
