@@ -38,10 +38,10 @@ export function renderMoviesMarkup(response) {
         )}, ${returnGenreName(genres, genre_ids[1])}, Other`;
       }
 
-      return `<li class="film-card">
+      return `<li class="film-card" data-id="${id}">
       <a href="modal-film.html" class="film-card__link" >
         <div class="film-card__img">
-          <img src="${posterUrl}" alt="${title}" loading="lazy" data-id="${id}"/>
+          <img src="${posterUrl}" alt="${title}" loading="lazy"/>
         </div>
         <div class="film-card__info">
           <p class="film-card__title">${title}</p>
