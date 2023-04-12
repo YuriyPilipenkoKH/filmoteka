@@ -11,7 +11,7 @@ function renderMovieCardsToWatched() {
   let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
   if (moviesInWatched.length === 0) {
     const ul = document.querySelector('.gallery-list');
-    const markup = `<li class="img-library"><p class="text-library">Please select a movie on the main page</p></li>`
+    const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`
     ul.innerHTML = markup;
   } else {
     const DEFAULT_POSTER_URL =
@@ -103,7 +103,7 @@ function renderMovieCardsToQueue() {
   let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
   if (moviesInQueue.length === 0) {
     const ul = document.querySelector('.gallery-list');
-    const markup = `<li class="img-library"><p class="text-library">Please select a movie on the main page</p></li>`
+    const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`
     ul.innerHTML = markup;
   }
   else {
