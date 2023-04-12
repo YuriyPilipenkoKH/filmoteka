@@ -11,4 +11,5 @@ export const refs = {
   trailerWindow: document.querySelector('.trailer-window'),
   trailerBtn: document.querySelector('.trailer-btn'),
   trailerBackdrop: document.querySelector('.trailer-backdrop'),
+  librarySubmit: document.querySelector('#library_submit'),
 };

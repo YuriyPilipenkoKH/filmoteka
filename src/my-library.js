@@ -10,3 +10,4 @@ import './js/modalTeam';
 import './js/addMovieToLibriary';
 import './js/modalFilm';
 import './js/onGalleryItemClick';
+import './js/onSearchLibrary';
