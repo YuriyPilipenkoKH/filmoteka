@@ -44,6 +44,10 @@ async function onGalleryItemClick(e) {
         <use href="../images/icons/sprite.svg#player"></use>
       </svg>
     </a>
+    <button
+      class="trailer-btn"
+      type="button"
+    ></button>
   </div>
 </div>
 <div class="modal__info">
@@ -53,7 +57,7 @@ async function onGalleryItemClick(e) {
       <li class="modal__item">
         <p class="modal__list--first-list">Vote / Votes</p>
         <p>
-          <span class="vote-average">${vote_average}</span><span> / </span><span
+          <span class="vote-average">${vote_average}</span><span class="modal__slash"> / </span><span
             class="vote-count"
             >${vote_count}</span
           >

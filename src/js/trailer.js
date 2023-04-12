@@ -1,6 +1,7 @@
 import { refs } from './refs';
 import { fetchVideoKey } from './fetchMovieTrailer';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { onEscKeyPress } from './trailerWindow';
 if (refs.trailerBtn) {
   refs.trailerBtn.addEventListener('click', onTrailerBtnClick);
 }
@@ -13,7 +14,8 @@ export async function onTrailerBtnClick(id) {
     for (let i = 0; i < obj.length; i += 1) {
       if (
         obj[i].name === 'Official Trailer' ||
-        obj[i].name.includes('Official Trailer')
+        obj[i].name.includes('Official Trailer') ||
+        obj[i].name.includes('Trailer')
       ) {
         return obj[i].key;
       }
@@ -21,7 +23,6 @@ export async function onTrailerBtnClick(id) {
     return null;
   }
   videoKey = getKey();
-  console.log(getKey());
   if (videoKey) {
     const videoMarkup = `<iframe
         class="trailer-video"
@@ -35,8 +36,10 @@ export async function onTrailerBtnClick(id) {
       ></iframe>`;
     refs.trailerWindow.innerHTML = videoMarkup;
     const trailerVideo = refs.trailerWindow.querySelector('.trailer-video');
-    refs.trailerBackdrop.classList.remove('visually-hidden');
     trailerVideo.src += '?autoplay=1';
+    refs.backdropModalFilm.classList.toggle('visually-hidden');
+    refs.trailerBackdrop.classList.toggle('visually-hidden');
+    refs.body.style.overflow = 'hidden';
   } else {
     Notify.info(`Sorry. 👀 There is no trailer for this movie yet.`);
   }

@@ -7,7 +7,6 @@ export async function fetchVideoKey(id) {
     const response = await axios(
       `${BASE_URL}3/movie/${id}/videos?api_key=${API_KEY}`
     );
-    console.log(response);
     return response;
   } catch (error) {
     console.log(error);
