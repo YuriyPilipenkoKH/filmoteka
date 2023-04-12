@@ -396,6 +396,7 @@
 }
 
 .header__notifier {
+  display: block;
   position: absolute;
 top: 85px;
 left: 10px;
@@ -414,9 +415,14 @@ top: 50px;
 
 }
 @media screen and (min-width: 1280px) {
- 
+ top: 55px;
 }
 }
+
+.header__notifier.is-hidden {
+ display: none;
+}
+
 
 .header__btn {
   margin-top: 16px;
