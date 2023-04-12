@@ -35,11 +35,7 @@ async function onGalleryItemClick(e) {
     <button
       class="trailer-btn"
       type="button"
-    >
-      <svg class="play-icon">
-        <use href="./images/icons/sprite.svg#youtube-logo"></use>
-      </svg>
-    </button>
+    ></button>
   </div>
 </div>
 <div class="modal__info">
