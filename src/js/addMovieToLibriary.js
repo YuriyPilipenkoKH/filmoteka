@@ -16,7 +16,11 @@ const DEFAULT_POSTER_URL =
 refs.movieModal.addEventListener('click', onModalButtonClick);
 
 async function onModalButtonClick(e) {
-  if (e.target.nodeName !== 'BUTTON') {
+  if (
+    // e.target.nodeName !== 'BUTTON' &&
+    e.target.name !== 'watched' &&
+    e.target.name !== 'queue'
+  ) {
     return;
   }
   const queueBtn = document.querySelector('.modal__btn-queue');
@@ -24,6 +28,7 @@ async function onModalButtonClick(e) {
 
   const buttonToAddOrRemoveMovie = e.target;
   const id = e.target.dataset.id;
+
   const response = await axios(`${BASE_URL}3/movie/${id}?api_key=${API_KEY}`);
   const movie = response.data;
 
