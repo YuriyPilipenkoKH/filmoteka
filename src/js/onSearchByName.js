@@ -2,7 +2,6 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 
-import { fetchMoviesByName } from './fetchMoviesByName';
 import { renderMoviesMarkup } from './renderFilms';
 import { startLoader, stopLoader } from './loader';
 import { refs } from './refs';
@@ -17,7 +16,7 @@ const moviesServiceByName = new MoviesServiceByName({
 
 export async function onFormSubmit(e) {
   e.preventDefault();
-
+  startLoader();
   moviesServiceByName.resetPage();
 
   const { query } = e.target.elements;
@@ -27,12 +26,13 @@ export async function onFormSubmit(e) {
 
   if (searchQuery === '') {
     Notify.info('Enter something');
+    stopLoader();
     return;
   } else {
     startLoader();
     try {
       moviesServiceByName.fetchMoviesByName().then(renderMoviesMarkup);
-      stopLoader();
+
       const pagination = new Pagination('pagination', {
         totalItems: 500,
         itemsPerPage: 10,
@@ -43,7 +43,6 @@ export async function onFormSubmit(e) {
         const currentPage = event.page;
         moviesServiceByName.page = currentPage;
         moviesServiceByName.fetchMoviesByName().then(renderMoviesMarkup);
-        stopLoader();
       });
     } catch (error) {
       console.log(error);

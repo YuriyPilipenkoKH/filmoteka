@@ -17,15 +17,9 @@ refs.movieModal.addEventListener('click', onModalButtonClick);
 
 const queueCategoryBtn = document.querySelectorAll('.header__btn-queue')[0];
 const watchedCategoryBtn = document.querySelectorAll('.header__btn-watched')[0];
-// const watchedBtnMobile = document.querySelectorAll('.header__btn-watched')[1];
-// const queueBtnMobile = document.querySelectorAll('.header__btn-queue')[1];
 
 async function onModalButtonClick(e) {
-  if (
-    // e.target.nodeName !== 'BUTTON' &&
-    e.target.name !== 'watched' &&
-    e.target.name !== 'queue'
-  ) {
+  if (e.target.name !== 'watched' && e.target.name !== 'queue') {
     return;
   }
   const queueBtn = document.querySelector('.modal__btn-queue');

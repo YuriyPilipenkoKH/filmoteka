@@ -1,8 +1,7 @@
 import { refs } from './refs';
 import { paginationRender } from './onSearchByTrend';
-/////////////////////////////////////////////////////
 import { onToTop } from './scrolled';
-/////////////////////////////////////////////////////
+import { stopLoader } from './loader';
 
 let pageNumber = 1;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -69,6 +68,7 @@ export function renderMoviesMarkup(response) {
 
     refs.galleryList.innerHTML = markup;
     paginationRender();
+    stopLoader();
     onToTop();
   } catch (error) {
     console.log(error);

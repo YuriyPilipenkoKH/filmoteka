@@ -3,14 +3,13 @@ import 'tui-pagination/dist/tui-pagination.css';
 import '../sass/components/_my-library.scss';
 import '../sass/components/_img-library.scss';
 import { refs } from './refs';
-import Notiflix from 'notiflix';
+
 
 const librarySearchFormRef = document.querySelector('#library_submit');
 
 const queueBtn = document.querySelector('.header__btn-queue');
 const watchedBtn = document.querySelector('.header__btn-watched');
-//   watchedBtnMobile: document.querySelectorAll('.header__btn-watched'),
-//   queueBtnMobile: document.querySelectorAll('.header__btn-queue'),
+
 
 librarySearchFormRef.addEventListener('submit', onLibrarySearchFormSubmit);
 

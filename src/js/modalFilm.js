@@ -6,7 +6,7 @@ refs.backdropModalFilm.addEventListener('click', onBackdropClose);
 
 function onCardClick(e) {
   e.preventDefault();
-  // console.log(e.target.nodeName);
+
   if (e.target.nodeName === 'IMG' || e.target.nodeName === 'P') {
     refs.modal.classList.toggle('is-hidden');
     refs.body.style.overflow = 'hidden';
