@@ -4,8 +4,8 @@ import '../sass/components/_my-library.scss';
 import '../sass/components/_img-library.scss';
 import { refs } from './refs';
 
-// let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
-// let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
+const paginationElement = document.getElementById('pagination');
+paginationElement.style.display = "none";
 
 function renderMovieCardsToWatched() {
   let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
@@ -13,17 +13,17 @@ function renderMovieCardsToWatched() {
     const ul = document.querySelector('.gallery-list');
     const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`;
     ul.innerHTML = markup;
+    paginationElement.style.display = "none";
   } else {
     const DEFAULT_POSTER_URL =
     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
-
+    paginationElement.style.display = "flex";
   const itemsPerPage = 20;
   const totalItems = moviesInWatched.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const ul = document.querySelector('.gallery-list');
 
   // Create the pagination instance and attach the event listener
-  const paginationElement = document.getElementById('pagination');
 
   const pagination = new Pagination(paginationElement, {
     totalItems: totalItems,
@@ -105,6 +105,7 @@ function renderMovieCardsToQueue() {
     const ul = document.querySelector('.gallery-list');
     const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`
     ul.innerHTML = markup;
+    paginationElement.style.display = "none";
   }
   else {
     const DEFAULT_POSTER_URL =
@@ -114,9 +115,8 @@ function renderMovieCardsToQueue() {
   const totalItems = moviesInQueue.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const ul = document.querySelector('.gallery-list');
-
+  paginationElement.style.display = "flex";
   // Create the pagination instance and attach the event listener
-  const paginationElement = document.getElementById('pagination');
 
   const pagination = new Pagination(paginationElement, {
     totalItems: totalItems,
