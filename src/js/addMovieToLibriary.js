@@ -22,6 +22,7 @@ async function onModalButtonClick(e) {
   if (e.target.name !== 'watched' && e.target.name !== 'queue') {
     return;
   }
+
   const queueBtn = document.querySelector('.modal__btn-queue');
   const watchedBtn = document.querySelector('.modal__btn-watched');
 
@@ -56,7 +57,10 @@ async function onModalButtonClick(e) {
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'watched', movie);
-    if (document.querySelector('.libriary__gallery-list')) {
+    if (
+      document.querySelector('.libriary__gallery-list') &&
+      watchedCategoryBtn.classList.contains('header__btn-category--current')
+    ) {
       renderMovieCardsToWatched();
       if (
         !queueBtn.classList.contains('remove') &&
@@ -86,7 +90,10 @@ async function onModalButtonClick(e) {
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
-    if (document.querySelector('.libriary__gallery-list')) {
+    if (
+      document.querySelector('.libriary__gallery-list') &&
+      queueCategoryBtn.classList.contains('header__btn-category--current')
+    ) {
       renderMovieCardsToQueue();
       if (
         !queueBtn.classList.contains('remove') &&
@@ -95,6 +102,15 @@ async function onModalButtonClick(e) {
         onCloseModal();
       }
     }
+  }
+}
+
+function closeModal() {
+  if (
+    !queueBtn.classList.contains('remove') &&
+    !watchedBtn.classList.contains('remove')
+  ) {
+    onCloseModal();
   }
 }
 
