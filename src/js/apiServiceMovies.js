@@ -5,6 +5,7 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { refs } from './refs';
 // import { fetchTrendingMovies } from './fetchTrendingMovies';
 import { renderMoviesMarkup } from './renderFilms';
+import { startLoader, stopLoader } from './loader';
 
 export class MoviesServiceByName {
   constructor(options) {
@@ -21,7 +22,7 @@ export class MoviesServiceByName {
         `${options.BASE_URL}3/search/movie?api_key=${options.API_KEY}&include_adult=false&query=${this.searchQuery}&page=${this.page}`
       );
       if (response.data.results.length === 0) {
-        Notify.info(`Nothing was found for your '${query}' request`);
+        Notify.info(`Nothing was found for your '${this.searchQuery}' request`);
         stopLoader();
         return;
       }

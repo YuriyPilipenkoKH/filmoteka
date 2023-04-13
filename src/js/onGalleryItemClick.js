@@ -5,6 +5,8 @@ import { onTrailerBtnClick } from './trailer';
 const BASE_URL = 'https://api.themoviedb.org/';
 const API_KEY = '90c7ff0c6a89140d8ec65b5296dfcca2';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const IMG_URL_RETINA = 'https://image.tmdb.org/t/p/w1280';
+
 const DEFAULT_POSTER_URL =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
@@ -30,8 +32,11 @@ async function onGalleryItemClick(e) {
     const posterUrl = poster_path
       ? `${IMG_URL}${poster_path}`
       : DEFAULT_POSTER_URL;
+    const srcsetChecked = poster_path
+      ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
+      : DEFAULT_POSTER_URL;
     const movieMarkup = `<div class="modal__card-thumb">
-    <img class="modal__image" src="${posterUrl}" alt="film-image" />
+    <img class="modal__image" src="${posterUrl}" srcset="${srcsetChecked}" alt="film-image" />
     <div class="trailer-overlay">
     <button
       class="trailer-btn"
