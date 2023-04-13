@@ -33,7 +33,7 @@ async function onGalleryItemClick(e) {
       ? `${IMG_URL}${poster_path}`
       : DEFAULT_POSTER_URL;
     const srcsetChecked = poster_path
-      ? (srcset = `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`)
+      ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
       : DEFAULT_POSTER_URL;
     const movieMarkup = `<div class="modal__card-thumb">
     <img class="modal__image" src="${posterUrl}" srcset="${srcsetChecked}" alt="film-image" />
