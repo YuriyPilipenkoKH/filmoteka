@@ -1,8 +1,3 @@
-// const moviesService = new MoviesService({
-//   page: 2,
-//
-// });
-
 window.addEventListener('scroll', onScroll);
 function onScroll() {
   const toTop = document.querySelector('.back-to-top');
