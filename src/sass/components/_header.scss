@@ -116,6 +116,7 @@
 }
 
 .header__wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -161,6 +162,7 @@
 .header__btn-home {
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 10px 26px;
   width: 87px;
   height: 34px;
@@ -393,6 +395,35 @@
     line-height: calc(64 / 75);
   }
 }
+
+.header__notifier {
+  display: block;
+  position: absolute;
+top: 85px;
+left: 10px;
+margin: 0 auto;
+font-style: normal;
+font-weight: 400;
+font-size: 10px;
+line-height: 12px;
+width: 155px;
+
+
+color: #FFFFFF;
+
+@media screen and (min-width: 768px) {
+top: 50px;
+
+}
+@media screen and (min-width: 1280px) {
+ top: 55px;
+}
+}
+
+.header__notifier.is-hidden {
+ display: none;
+}
+
 
 .header__btn {
   margin-top: 16px;
