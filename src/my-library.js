@@ -1,8 +1,8 @@
 import './sass/index.scss';
 import './js/apiServiceMovies';
 import './js/renderFilms';
-import './js/loader'
-import './js/onSearchByName';
+import './js/loader';
+// import './js/onSearchByName';
 import './js/renderMovieCardsToLibriary';
 import './js/pagination';
 import './js/scrolled';
@@ -10,4 +10,5 @@ import './js/modalTeam';
 import './js/addMovieToLibriary';
 import './js/modalFilm';
 import './js/onGalleryItemClick';
-import './js/onSearchLibrary';
+// import './js/onSearchLibrary';
+import './js/searchMoviesInLibrary';
