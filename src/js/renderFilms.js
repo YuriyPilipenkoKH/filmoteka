@@ -32,7 +32,7 @@ export function renderMoviesMarkup(response) {
         : DEFAULT_POSTER_URL;
 
       const srcsetChecked = poster_path
-        ? (srcset = `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`)
+        ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
         : DEFAULT_POSTER_URL;
 
       if (genresCount === 1) {
