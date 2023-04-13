@@ -12,4 +12,6 @@ export const refs = {
   trailerBtn: document.querySelector('.trailer-btn'),
   trailerBackdrop: document.querySelector('.trailer-backdrop'),
   librarySubmit: document.querySelector('#library_submit'),
+
+  toTop: document.querySelector('.back-to-top'),
 };

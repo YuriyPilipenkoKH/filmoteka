@@ -4,9 +4,9 @@ import './js/renderFilms';
 import { renderMoviesMarkup } from './js/renderFilms';
 import { refs } from './js/refs';
 import { fetchTrendingMovies } from './js/fetchTrendingMovies';
-import { onFormSubmit } from './js/onSearchFormSubmit';
 import { getMoviesGenres } from './js/getMoviesGenres';
 import { onGalleryItemClick } from './js/onGalleryItemClick';
+
 getMoviesGenres();
 fetchTrendingMovies().then(renderMoviesMarkup);
 
