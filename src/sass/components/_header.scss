@@ -172,8 +172,8 @@
   border: transparent;
   text-transform: uppercase;
   cursor: pointer;
- color: var(--primary-text-color);
-  background: var(--secondary-text-color);
+ color: var(--secondary-text-color);
+  background: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     padding: 10px 20px;
     width: 83px;

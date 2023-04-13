@@ -1,8 +1,11 @@
+import { refs } from './refs';
 window.addEventListener('scroll', onScroll);
 function onScroll() {
   const toTop = document.querySelector('.back-to-top');
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
+
+
 
   if (scrolled > coords) {
     toTop.classList.add('visible');
