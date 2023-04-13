@@ -32,9 +32,12 @@ export function renderMoviesMarkup(response) {
           ? `${IMG_URL}${poster_path}`
           : DEFAULT_POSTER_URL;
 
-        const srcsetChecked = poster_path
-          ? (srcset = `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`)
-          : DEFAULT_POSTER_URL;
+
+      const srcsetChecked = poster_path
+        ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
+        : DEFAULT_POSTER_URL;
+
+
 
         if (genresCount === 1) {
           genresToShow = returnGenreName(genres, genre_ids[0]);
