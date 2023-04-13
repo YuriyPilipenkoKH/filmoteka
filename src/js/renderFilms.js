@@ -18,38 +18,42 @@ function returnGenreName(genres, id) {
 }
 
 export function renderMoviesMarkup(response) {
-  pageNumber = response.data.page;
+  try {
+    pageNumber = response.data.page;
 
-  const moviesArray = response.data.results;
-  const genres = JSON.parse(localStorage.getItem('genres'));
-  const markup = moviesArray
-    .map(({ poster_path, title, genre_ids, id, release_date }) => {
-      const genresCount = genre_ids.length;
-      const date = release_date.split('').splice(0, 4).join('');
-      let genresToShow = '';
-      const posterUrl = poster_path
-        ? `${IMG_URL}${poster_path}`
-        : DEFAULT_POSTER_URL;
+    const moviesArray = response.data.results;
+    const genres = JSON.parse(localStorage.getItem('genres'));
+    const markup = moviesArray
+      .map(({ poster_path, title, genre_ids, id, release_date }) => {
+        const genresCount = genre_ids.length;
+        const date = release_date.split('').splice(0, 4).join('');
+        let genresToShow = '';
+        const posterUrl = poster_path
+          ? `${IMG_URL}${poster_path}`
+          : DEFAULT_POSTER_URL;
+
 
       const srcsetChecked = poster_path
         ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
         : DEFAULT_POSTER_URL;
 
-      if (genresCount === 1) {
-        genresToShow = returnGenreName(genres, genre_ids[0]);
-      } else if (genresCount === 2) {
-        genresToShow = `${returnGenreName(
-          genres,
-          genre_ids[0]
-        )}, ${returnGenreName(genres, genre_ids[1])}`;
-      } else if (genresCount > 2) {
-        genresToShow = `${returnGenreName(
-          genres,
-          genre_ids[0]
-        )}, ${returnGenreName(genres, genre_ids[1])}, Other`;
-      }
 
-      return `<li class="film-card" >
+
+        if (genresCount === 1) {
+          genresToShow = returnGenreName(genres, genre_ids[0]);
+        } else if (genresCount === 2) {
+          genresToShow = `${returnGenreName(
+            genres,
+            genre_ids[0]
+          )}, ${returnGenreName(genres, genre_ids[1])}`;
+        } else if (genresCount > 2) {
+          genresToShow = `${returnGenreName(
+            genres,
+            genre_ids[0]
+          )}, ${returnGenreName(genres, genre_ids[1])}, Other`;
+        }
+
+        return `<li class="film-card" >
       <a href="modal-film.html" class="film-card__link" >
         <div class="film-card__img">
           <img src="${posterUrl}" alt="${title}" srcset="${srcsetChecked}" loading="lazy" data-id="${id}"/>
@@ -60,11 +64,14 @@ export function renderMoviesMarkup(response) {
         </div>
       </a>
     </li>`;
-    })
-    .join('');
+      })
+      .join('');
 
-  refs.galleryList.innerHTML = markup;
-  paginationRender();
+    refs.galleryList.innerHTML = markup;
+    paginationRender();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export { pageNumber };
