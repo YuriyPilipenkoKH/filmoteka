@@ -111,6 +111,7 @@ function renderMovieCardsToQueue() {
     const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`;
     ul.innerHTML = markup;
     paginationElement.style.display = 'none';
+    stopLoader();
   } else {
     const DEFAULT_POSTER_URL =
       'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
