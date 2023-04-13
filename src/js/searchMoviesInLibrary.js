@@ -6,6 +6,7 @@ import { refs } from './refs';
 import Notiflix from 'notiflix';
 
 const librarySearchFormRef = document.querySelector('#library_submit');
+const paginationElement = document.getElementById('pagination');
 
 const queueBtn = document.querySelector('.header__btn-queue');
 const watchedBtn = document.querySelector('.header__btn-watched');
@@ -36,16 +37,19 @@ function searchMovieInLibrary(searchQuery, localStorageItem) {
   refs.galleryList.innerHTML = `<li class="img-library"><span class="text-library">there are no similar films in this category</span></li>`;
 
   if (searchQuery.trim() === '') {
+    paginationElement.style.display = 'none';
     refs.galleryList.innerHTML = `<li class="img-library"><span class="text-library">The search query should not be empty</span></li>`;
     return;
   }
 
   if (arrOfQueryMovies.length === 0) {
+    paginationElement.style.display = 'none';
     refs.galleryList.innerHTML = `<li class="img-library"><span class="text-library">There are no similar movies in this category</span></li>`;
     return;
   }
 
   renderMovieCards(arrOfQueryMovies);
+  paginationElement.style.display = 'flex';
 }
 
 function renderMovieCards(arrOfQueryMovies) {
