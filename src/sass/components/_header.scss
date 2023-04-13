@@ -1,5 +1,5 @@
 .header__container {
-  // outline: 2px solid #000000;
+
   padding-top: 20px;
   @media screen and (min-width: 768px) {
     padding-top: 32px;
@@ -133,9 +133,7 @@
   }
 }
 
-.header__btn-link {
 
-}
 
 .button {
   padding: 0;
@@ -156,8 +154,8 @@
 
 .header__btn-home.current,
 .header__btn-library.current {
-  color: #ffffff;
-  background: #000000;
+  color: var(--primary-text-color);
+  background: var(--secondary-text-color);
 }
 .header__btn-home {
   display: flex;
@@ -174,8 +172,8 @@
   border: transparent;
   text-transform: uppercase;
   cursor: pointer;
-  color: #000000;
-  background: #ffffff;
+ color: var(--primary-text-color);
+  background: var(--secondary-text-color);
   @media screen and (min-width: 768px) {
     padding: 10px 20px;
     width: 83px;
@@ -204,8 +202,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #000000;
-  background: #ffffff;
+  color: var(--secondary-text-color);
+  background: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     padding: 10px 20px;
     width: 109px;
@@ -225,7 +223,7 @@
   display: flex;
   justify-content: space-between;
   width: 252px;
-  background: #ffffff;
+  background: var(--primary-text-color);
   border-radius: 100px;
   @media screen and (min-width: 768px) {
     width: 165px;
@@ -250,7 +248,7 @@
     height: 38px;
   }
 
-  color: #000000;
+  color: var(--secondary-text-color);
   @media screen and (min-width: 1280px) {
     max-width: 142px;
     height: 42px;
@@ -262,7 +260,7 @@
   width: 45px;
   padding: 7px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--primary-text-color);
   border: transparent;
 
   justify-content: center;
@@ -277,7 +275,7 @@
   font-size: 12px;
   line-height: calc(12 / 14);
 
-  color: #000000;
+  color: var(--secondary-text-color);
   @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: calc(14 / 16);
@@ -293,8 +291,8 @@
   height: 14px;
   stroke-width: 0;
   stroke: currentColor;
-  stroke: #000000;
-  fill: #ffffff;
+  stroke: var(--secondary-text-color);
+  fill: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     width: 16px;
     height: 16px;
@@ -312,8 +310,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #b92f2c;
-  background: #ffffff;
+  color: var(--current-color);
+  background: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     height: 38px;
@@ -337,8 +335,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #b92f2c;
-  background: #ffffff;
+  color: var(--current-color);
+  background: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     padding: 12px 24px;
@@ -351,8 +349,8 @@
 }
 
 .header__btn-category--current {
-  color: #ffffff;
-  background: #b92f2c;
+  color: var(--primary-text-color);
+  background: var(--current-color);
 }
 
 .header__logo-link {
@@ -367,7 +365,7 @@
   margin-right: 8px;
   stroke-width: 0;
   stroke: currentColor;
-  stroke: #ffffff;
+  stroke: var(--primary-text-color);
   fill: transparent;
   @media screen and (min-width: 768px) {
     width: 40px;
@@ -385,7 +383,7 @@
   font-size: 32px;
   line-height: 38px;
   line-height: calc(32 / 38);
-  color: #ffffff;
+  color: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     font-size: 40px;
     line-height: calc(40 / 47);
@@ -409,7 +407,7 @@ line-height: 12px;
 width: 155px;
 
 
-color: #FFFFFF;
+color: var(--primary-text-color);
 
 @media screen and (min-width: 768px) {
 top: 50px;
