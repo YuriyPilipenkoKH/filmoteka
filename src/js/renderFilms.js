@@ -1,5 +1,8 @@
 import { refs } from './refs';
 import { paginationRender } from './onSearchByTrend';
+/////////////////////////////////////////////////////
+import { onToTop } from './scrolled';
+/////////////////////////////////////////////////////
 
 let pageNumber = 1;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
@@ -32,12 +35,9 @@ export function renderMoviesMarkup(response) {
           ? `${IMG_URL}${poster_path}`
           : DEFAULT_POSTER_URL;
 
-
-      const srcsetChecked = poster_path
-        ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
-        : DEFAULT_POSTER_URL;
-
-
+        const srcsetChecked = poster_path
+          ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
+          : DEFAULT_POSTER_URL;
 
         if (genresCount === 1) {
           genresToShow = returnGenreName(genres, genre_ids[0]);
@@ -69,6 +69,7 @@ export function renderMoviesMarkup(response) {
 
     refs.galleryList.innerHTML = markup;
     paginationRender();
+    onToTop();
   } catch (error) {
     console.log(error);
   }

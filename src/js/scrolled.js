@@ -1,8 +1,6 @@
-
-
 // const moviesService = new MoviesService({
 //   page: 2,
-//   
+//
 // });
 
 window.addEventListener('scroll', onScroll);
@@ -19,8 +17,6 @@ function onScroll() {
   }
 }
 function onToTop() {
-
-
   if (window.pageYOffset > 0) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
@@ -43,3 +39,5 @@ function renderBtn() {
 renderBtn();
 document.querySelector('.back-to-top').addEventListener('click', onToTop);
 onScroll();
+
+export { onToTop };
