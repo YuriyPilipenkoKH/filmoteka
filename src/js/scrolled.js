@@ -1,4 +1,4 @@
-// import { MoviesService } from './endlesScroll';
+
 
 // const moviesService = new MoviesService({
 //   page: 2,
@@ -19,8 +19,8 @@ function onScroll() {
   }
 }
 function onToTop() {
-  // moviesService.resetPage();
-  // location.reload();
+
+
   if (window.pageYOffset > 0) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
