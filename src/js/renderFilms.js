@@ -1,4 +1,7 @@
 import { refs } from './refs';
+import { paginationRender } from './onSearchByTrend';
+
+let pageNumber = 1;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 const DEFAULT_POSTER_URL =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
@@ -12,7 +15,10 @@ function returnGenreName(genres, id) {
     console.log(error);
   }
 }
+
 export function renderMoviesMarkup(response) {
+  pageNumber = response.data.page;
+
   const moviesArray = response.data.results;
   const genres = JSON.parse(localStorage.getItem('genres'));
   const markup = moviesArray
@@ -53,4 +59,7 @@ export function renderMoviesMarkup(response) {
     .join('');
 
   refs.galleryList.innerHTML = markup;
+  paginationRender();
 }
+
+export { pageNumber };
