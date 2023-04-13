@@ -4,12 +4,44 @@ import '../sass/components/_my-library.scss';
 import '../sass/components/_img-library.scss';
 import { refs } from './refs';
 
-
 const librarySearchFormRef = document.querySelector('#library_submit');
+
+const paginationElement = document.getElementById('pagination');
 
 const queueBtn = document.querySelector('.header__btn-queue');
 const watchedBtn = document.querySelector('.header__btn-watched');
 
+const arrOfMoviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
+
+if (arrOfMoviesInQueue.length === 0) {
+  librarySearchFormRef.elements[0].disabled = true;
+  librarySearchFormRef.elements[1].disabled = true;
+}
+
+document.addEventListener('click', checkIsFormMustBeDisabled);
+
+export function checkIsFormMustBeDisabled() {
+  const librarySearchFormRef = document.querySelector('#library_submit');
+  const arrOfMoviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
+  const arrOfMoviesInWatched =
+    JSON.parse(localStorage.getItem('watched')) || [];
+  if (
+    queueBtn.classList.contains('header__btn-category--current') &&
+    arrOfMoviesInQueue.length !== 0
+  ) {
+    librarySearchFormRef.elements[0].disabled = false;
+    librarySearchFormRef.elements[1].disabled = false;
+  } else if (
+    watchedBtn.classList.contains('header__btn-category--current') &&
+    arrOfMoviesInWatched.length !== 0
+  ) {
+    librarySearchFormRef.elements[0].disabled = false;
+    librarySearchFormRef.elements[1].disabled = false;
+  } else {
+    librarySearchFormRef.elements[0].disabled = true;
+    librarySearchFormRef.elements[1].disabled = true;
+  }
+}
 
 librarySearchFormRef.addEventListener('submit', onLibrarySearchFormSubmit);
 
@@ -35,16 +67,19 @@ function searchMovieInLibrary(searchQuery, localStorageItem) {
   refs.galleryList.innerHTML = `<li class="img-library"><span class="text-library">there are no similar films in this category</span></li>`;
 
   if (searchQuery.trim() === '') {
+    paginationElement.style.display = 'none';
     refs.galleryList.innerHTML = `<li class="img-library"><span class="text-library">The search query should not be empty</span></li>`;
     return;
   }
 
   if (arrOfQueryMovies.length === 0) {
+    paginationElement.style.display = 'none';
     refs.galleryList.innerHTML = `<li class="img-library"><span class="text-library">There are no similar movies in this category</span></li>`;
     return;
   }
 
   renderMovieCards(arrOfQueryMovies);
+  paginationElement.style.display = 'flex';
 }
 
 function renderMovieCards(arrOfQueryMovies) {
