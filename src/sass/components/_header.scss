@@ -20,8 +20,8 @@
 
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
+      var(--overlay-color),
+      var(--overlay-color)
     ),
     url(../images/background-mobile.jpg);
 
@@ -30,8 +30,8 @@
     (min-resolution: 2dppx) {
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-mobile@2x.jpg);
   }
@@ -40,8 +40,8 @@
     (min-resolution: 2dppx) {
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-mobile@3x.jpg);
   }
@@ -54,8 +54,8 @@
 
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-tab.jpg);
     @media (min-device-pixel-ratio: 2),
@@ -63,8 +63,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0.4)
+          var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-tab@2x.jpg);
     }
@@ -73,8 +73,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0.4)
+         var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-tab@3x.jpg);
     }
@@ -87,8 +87,8 @@
     border-radius: 15px;
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.49),
-        rgba(0, 0, 0, 0.49)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-desk.jpg);
 
@@ -97,8 +97,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.49),
-          rgba(0, 0, 0, 0.49)
+          var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-desk@2x.jpg);
     }
@@ -107,8 +107,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.49),
-          rgba(0, 0, 0, 0.49)
+          var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-desk@3x.jpg);
     }
@@ -125,7 +125,7 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;
-    gap: 4px;
+    gap: 8px;
     @media screen and (min-width: 1280px) {
       padding-top: 0;
       gap: 8px;
@@ -144,11 +144,12 @@
 
 .header__btn-wrapper {
   display: flex;
-
+  gap: 4px;
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
     margin-top: 0;
     padding-top: 0;
+     
   }
 }
 
@@ -192,7 +193,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 113px;
+  width: 113px;
   height: 34px;
   margin-left: 4px;
   border-radius: 100px;
