@@ -1,24 +1,29 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import '../sass/components/_my-library.scss';
+import '../sass/components/_img-library.scss';
 import { refs } from './refs';
 
-// let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
-// let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
+const paginationElement = document.getElementById('pagination');
+paginationElement.style.display = "none";
 
 function renderMovieCardsToWatched() {
   let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
-
-  const DEFAULT_POSTER_URL =
+  if (moviesInWatched.length === 0) {
+    const ul = document.querySelector('.gallery-list');
+    const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`;
+    ul.innerHTML = markup;
+    paginationElement.style.display = "none";
+  } else {
+    const DEFAULT_POSTER_URL =
     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
-
+    paginationElement.style.display = "flex";
   const itemsPerPage = 20;
   const totalItems = moviesInWatched.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const ul = document.querySelector('.gallery-list');
 
   // Create the pagination instance and attach the event listener
-  const paginationElement = document.getElementById('pagination');
 
   const pagination = new Pagination(paginationElement, {
     totalItems: totalItems,
@@ -91,20 +96,27 @@ function renderMovieCardsToWatched() {
 
   // Load the first page when the page is loaded
   pagination.movePageTo(1);
+  }
 }
 // Render the markup only when the user clicks on a page link
 function renderMovieCardsToQueue() {
   let moviesInQueue = JSON.parse(localStorage.getItem('queue')) || [];
-  const DEFAULT_POSTER_URL =
+  if (moviesInQueue.length === 0) {
+    const ul = document.querySelector('.gallery-list');
+    const markup = `<li class="img-library"><span class="text-library">Please select a movie on the main page</span></li>`
+    ul.innerHTML = markup;
+    paginationElement.style.display = "none";
+  }
+  else {
+    const DEFAULT_POSTER_URL =
     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
   const itemsPerPage = 20;
   const totalItems = moviesInQueue.length;
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   const ul = document.querySelector('.gallery-list');
-
+  paginationElement.style.display = "flex";
   // Create the pagination instance and attach the event listener
-  const paginationElement = document.getElementById('pagination');
 
   const pagination = new Pagination(paginationElement, {
     totalItems: totalItems,
@@ -177,6 +189,7 @@ function renderMovieCardsToQueue() {
 
   // Load the first page when the page is loaded
   pagination.movePageTo(1);
+  }
 }
 
 export { renderMovieCardsToQueue, renderMovieCardsToWatched };
