@@ -15,6 +15,11 @@ const DEFAULT_POSTER_URL =
 
 refs.movieModal.addEventListener('click', onModalButtonClick);
 
+const queueCategoryBtn = document.querySelectorAll('.header__btn-queue')[0];
+const watchedCategoryBtn = document.querySelectorAll('.header__btn-watched')[0];
+// const watchedBtnMobile = document.querySelectorAll('.header__btn-watched')[1];
+// const queueBtnMobile = document.querySelectorAll('.header__btn-queue')[1];
+
 async function onModalButtonClick(e) {
   if (
     // e.target.nodeName !== 'BUTTON' &&
@@ -41,7 +46,10 @@ async function onModalButtonClick(e) {
         'watched',
         movie
       );
-      if (document.querySelector('.libriary__gallery-list')) {
+      if (
+        document.querySelector('.libriary__gallery-list') &&
+        watchedCategoryBtn.classList.contains('header__btn-category--current')
+      ) {
         renderMovieCardsToWatched();
         if (
           !queueBtn.classList.contains('remove') &&
@@ -68,7 +76,10 @@ async function onModalButtonClick(e) {
     watchedBtn.classList.remove('modal__btn--clicked');
     if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
       removeMoveiFromLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
-      if (document.querySelector('.libriary__gallery-list')) {
+      if (
+        document.querySelector('.libriary__gallery-list') &&
+        queueCategoryBtn.classList.contains('header__btn-category--current')
+      ) {
         renderMovieCardsToQueue();
         if (
           !queueBtn.classList.contains('remove') &&
