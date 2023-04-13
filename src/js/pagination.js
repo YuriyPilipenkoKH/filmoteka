@@ -5,7 +5,7 @@ import '../sass/components/_img-library.scss';
 import { refs } from './refs';
 
 const paginationElement = document.getElementById('pagination');
-paginationElement.style.display = "none";
+// paginationElement.style.display = "none";
 
 function renderMovieCardsToWatched() {
   let moviesInWatched = JSON.parse(localStorage.getItem('watched')) || [];
