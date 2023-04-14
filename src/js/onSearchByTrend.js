@@ -5,7 +5,6 @@ import { renderMoviesMarkup } from './renderFilms';
 import { totalFilms } from './fetchTrendingMovies';
 import { pageNumber } from './renderFilms';
 import { startLoader } from './loader';
-import { startLoader } from './loader';
 
 export function paginationRender() {
   const moviesService = new MoviesService({
@@ -24,7 +23,6 @@ export function paginationRender() {
     if (currentPage) {
       moviesService.page = currentPage;
       startLoader();
-       startLoader();
       moviesService.fetchTrendingMovies().then(renderMoviesMarkup);
     }
   });
