@@ -16,6 +16,8 @@ export const refs = {
   btnHome: document.querySelector('.header__btn-home'),
   btnLibrary: document.querySelector('.header__btn-library'),
   toTop: document.querySelector('.back-to-top'),
+
+  isTrendingMoviesActive: true,
 };
 
 
