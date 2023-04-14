@@ -10,19 +10,20 @@ import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/';
 const API_KEY = '90c7ff0c6a89140d8ec65b5296dfcca2';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+const IMG_URL_RETINA = 'https://image.tmdb.org/t/p/w1280';
 const DEFAULT_POSTER_URL =
   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
 refs.movieModal.addEventListener('click', onModalButtonClick);
 
+const queueCategoryBtn = document.querySelectorAll('.header__btn-queue')[0];
+const watchedCategoryBtn = document.querySelectorAll('.header__btn-watched')[0];
+
 async function onModalButtonClick(e) {
-  if (
-    // e.target.nodeName !== 'BUTTON' &&
-    e.target.name !== 'watched' &&
-    e.target.name !== 'queue'
-  ) {
+  if (e.target.name !== 'watched' && e.target.name !== 'queue') {
     return;
   }
+
   const queueBtn = document.querySelector('.modal__btn-queue');
   const watchedBtn = document.querySelector('.modal__btn-watched');
 
@@ -41,7 +42,10 @@ async function onModalButtonClick(e) {
         'watched',
         movie
       );
-      if (document.querySelector('.libriary__gallery-list')) {
+      if (
+        document.querySelector('.libriary__gallery-list') &&
+        watchedCategoryBtn.classList.contains('header__btn-category--current')
+      ) {
         renderMovieCardsToWatched();
         if (
           !queueBtn.classList.contains('remove') &&
@@ -54,7 +58,10 @@ async function onModalButtonClick(e) {
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'watched', movie);
-    if (document.querySelector('.libriary__gallery-list')) {
+    if (
+      document.querySelector('.libriary__gallery-list') &&
+      watchedCategoryBtn.classList.contains('header__btn-category--current')
+    ) {
       renderMovieCardsToWatched();
       if (
         !queueBtn.classList.contains('remove') &&
@@ -68,7 +75,10 @@ async function onModalButtonClick(e) {
     watchedBtn.classList.remove('modal__btn--clicked');
     if (buttonToAddOrRemoveMovie.classList.contains('remove')) {
       removeMoveiFromLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
-      if (document.querySelector('.libriary__gallery-list')) {
+      if (
+        document.querySelector('.libriary__gallery-list') &&
+        queueCategoryBtn.classList.contains('header__btn-category--current')
+      ) {
         renderMovieCardsToQueue();
         if (
           !queueBtn.classList.contains('remove') &&
@@ -81,7 +91,10 @@ async function onModalButtonClick(e) {
       return;
     }
     addMovieToLocalStorageItem(buttonToAddOrRemoveMovie, 'queue', movie);
-    if (document.querySelector('.libriary__gallery-list')) {
+    if (
+      document.querySelector('.libriary__gallery-list') &&
+      queueCategoryBtn.classList.contains('header__btn-category--current')
+    ) {
       renderMovieCardsToQueue();
       if (
         !queueBtn.classList.contains('remove') &&
@@ -90,6 +103,15 @@ async function onModalButtonClick(e) {
         onCloseModal();
       }
     }
+  }
+}
+
+function closeModal() {
+  if (
+    !queueBtn.classList.contains('remove') &&
+    !watchedBtn.classList.contains('remove')
+  ) {
+    onCloseModal();
   }
 }
 

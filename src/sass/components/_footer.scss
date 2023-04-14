@@ -1,7 +1,7 @@
 .footer {
   padding-top: 28px;
   padding-bottom: 28px;
-  background: #f7f7f7;
+  background: var(--background-color);
 
   @media screen and (min-width: 768px) {
     padding-top: 30px;
@@ -14,7 +14,7 @@
 }
 
 .footer-container {
-  color: #545454;
+  color: var(--footer-text-color);
   font-size: 14px;
   line-height: 16px;
 
@@ -33,7 +33,7 @@
 }
 
 .footer-icon {
-  fill: #b92f2c;
+  fill: --current-color;
 }
 
 .about-team {

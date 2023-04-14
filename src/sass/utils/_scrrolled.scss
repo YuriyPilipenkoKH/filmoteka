@@ -6,7 +6,7 @@
   border: none;
   background-color: transparent;
   padding: 8px;
-  fill: #950000;
+  fill: var(--current-color);
   border-radius: 50%;
   cursor: pointer;
   transition: var(--time) ease-in-out;
@@ -21,6 +21,3 @@
   display: block;
 }
 
-.backdrop__modal-film:not(.is-hidden) #back { 
-   display: none;
-}

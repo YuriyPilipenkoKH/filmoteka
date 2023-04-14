@@ -12,4 +12,10 @@ export const refs = {
   trailerBtn: document.querySelector('.trailer-btn'),
   trailerBackdrop: document.querySelector('.trailer-backdrop'),
   librarySubmit: document.querySelector('#library_submit'),
+
+  btnHome: document.querySelector('.header__btn-home'),
+  btnLibrary: document.querySelector('.header__btn-library'),
+  toTop: document.querySelector('.back-to-top'),
 };
+
+

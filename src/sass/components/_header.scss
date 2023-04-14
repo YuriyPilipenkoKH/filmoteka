@@ -1,5 +1,5 @@
 .header__container {
-  // outline: 2px solid #000000;
+
   padding-top: 20px;
   @media screen and (min-width: 768px) {
     padding-top: 32px;
@@ -20,8 +20,8 @@
 
   background-image: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.4),
-      rgba(0, 0, 0, 0.4)
+      var(--overlay-color),
+      var(--overlay-color)
     ),
     url(../images/background-mobile.jpg);
 
@@ -30,8 +30,8 @@
     (min-resolution: 2dppx) {
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-mobile@2x.jpg);
   }
@@ -40,8 +40,8 @@
     (min-resolution: 2dppx) {
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-mobile@3x.jpg);
   }
@@ -54,8 +54,8 @@
 
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.4)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-tab.jpg);
     @media (min-device-pixel-ratio: 2),
@@ -63,8 +63,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0.4)
+          var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-tab@2x.jpg);
     }
@@ -73,8 +73,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.4),
-          rgba(0, 0, 0, 0.4)
+         var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-tab@3x.jpg);
     }
@@ -87,8 +87,8 @@
     border-radius: 15px;
     background-image: linear-gradient(
         to right,
-        rgba(0, 0, 0, 0.49),
-        rgba(0, 0, 0, 0.49)
+        var(--overlay-color),
+      var(--overlay-color)
       ),
       url(../images/background-desk.jpg);
 
@@ -97,8 +97,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.49),
-          rgba(0, 0, 0, 0.49)
+          var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-desk@2x.jpg);
     }
@@ -107,8 +107,8 @@
       (min-resolution: 2dppx) {
       background-image: linear-gradient(
           to right,
-          rgba(0, 0, 0, 0.49),
-          rgba(0, 0, 0, 0.49)
+          var(--overlay-color),
+      var(--overlay-color)
         ),
         url(../images/background-desk@3x.jpg);
     }
@@ -125,7 +125,7 @@
     flex-direction: row-reverse;
     align-items: center;
     justify-content: flex-end;
-    gap: 4px;
+    gap: 8px;
     @media screen and (min-width: 1280px) {
       padding-top: 0;
       gap: 8px;
@@ -133,9 +133,7 @@
   }
 }
 
-.header__btn-link {
 
-}
 
 .button {
   padding: 0;
@@ -146,18 +144,19 @@
 
 .header__btn-wrapper {
   display: flex;
-
+  gap: 4px;
   @media screen and (min-width: 768px) {
     margin-bottom: 0px;
     margin-top: 0;
     padding-top: 0;
+     
   }
 }
 
 .header__btn-home.current,
 .header__btn-library.current {
-  color: #ffffff;
-  background: #000000;
+  color: var(--primary-text-color);
+  background: var(--secondary-text-color);
 }
 .header__btn-home {
   display: flex;
@@ -174,8 +173,8 @@
   border: transparent;
   text-transform: uppercase;
   cursor: pointer;
-  color: #000000;
-  background: #ffffff;
+ color: var(--secondary-text-color);
+  background: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     padding: 10px 20px;
     width: 83px;
@@ -194,7 +193,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 113px;
+  width: 113px;
   height: 34px;
   margin-left: 4px;
   border-radius: 100px;
@@ -204,8 +203,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #000000;
-  background: #ffffff;
+  color: var(--secondary-text-color);
+  background: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     padding: 10px 20px;
     width: 109px;
@@ -225,7 +224,7 @@
   display: flex;
   justify-content: space-between;
   width: 252px;
-  background: #ffffff;
+  background: var(--primary-text-color);
   border-radius: 100px;
   @media screen and (min-width: 768px) {
     width: 165px;
@@ -250,7 +249,7 @@
     height: 38px;
   }
 
-  color: #000000;
+  color: var(--secondary-text-color);
   @media screen and (min-width: 1280px) {
     max-width: 142px;
     height: 42px;
@@ -262,7 +261,7 @@
   width: 45px;
   padding: 7px;
   cursor: pointer;
-  background-color: #ffffff;
+  background-color: var(--primary-text-color);
   border: transparent;
 
   justify-content: center;
@@ -277,7 +276,7 @@
   font-size: 12px;
   line-height: calc(12 / 14);
 
-  color: #000000;
+  color: var(--secondary-text-color);
   @media screen and (min-width: 768px) {
     font-size: 14px;
     line-height: calc(14 / 16);
@@ -293,8 +292,8 @@
   height: 14px;
   stroke-width: 0;
   stroke: currentColor;
-  stroke: #000000;
-  fill: #ffffff;
+  stroke: var(--secondary-text-color);
+  fill: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     width: 16px;
     height: 16px;
@@ -312,8 +311,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #b92f2c;
-  background: #ffffff;
+  color: var(--current-color);
+  background: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     height: 38px;
@@ -337,8 +336,8 @@
   line-height: calc(12 / 14);
   text-transform: uppercase;
   cursor: pointer;
-  color: #b92f2c;
-  background: #ffffff;
+  color: var(--current-color);
+  background: var(--primary-text-color);
 
   @media screen and (min-width: 768px) {
     padding: 12px 24px;
@@ -351,8 +350,8 @@
 }
 
 .header__btn-category--current {
-  color: #ffffff;
-  background: #b92f2c;
+  color: var(--primary-text-color);
+  background: var(--current-color);
 }
 
 .header__logo-link {
@@ -367,7 +366,7 @@
   margin-right: 8px;
   stroke-width: 0;
   stroke: currentColor;
-  stroke: #ffffff;
+  stroke: var(--primary-text-color);
   fill: transparent;
   @media screen and (min-width: 768px) {
     width: 40px;
@@ -385,7 +384,7 @@
   font-size: 32px;
   line-height: 38px;
   line-height: calc(32 / 38);
-  color: #ffffff;
+  color: var(--primary-text-color);
   @media screen and (min-width: 768px) {
     font-size: 40px;
     line-height: calc(40 / 47);
@@ -409,7 +408,7 @@ line-height: 12px;
 width: 155px;
 
 
-color: #FFFFFF;
+color: var(--primary-text-color);
 
 @media screen and (min-width: 768px) {
 top: 50px;

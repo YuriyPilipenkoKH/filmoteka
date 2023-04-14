@@ -6,6 +6,6 @@ export async function getMoviesGenres() {
     `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`
   );
   const genres = responce.data.genres;
-  //   console.log(genres);
+
   localStorage.setItem('genres', JSON.stringify(genres));
 }
