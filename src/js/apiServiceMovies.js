@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+
 import { startLoader, stopLoader } from './loader';
-///=========== ПЕРЕЗАЛИВКА
+
 
 let totalFilmsOnSearch = 0;
 
@@ -21,9 +22,11 @@ export class MoviesServiceByName {
       );
       if (response.data.results.length === 0) {
         Notify.info(`Nothing was found for your '${this.searchQuery}' request`);
+
         return;
       }
       totalFilmsOnSearch = response.data.total_results;
+    
       return response;
     } catch (error) {
       console.log(error);

@@ -4,7 +4,8 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { renderMoviesMarkup } from './renderFilms';
 import { startLoader, stopLoader } from './loader';
 import { refs } from './refs';
-import { MoviesServiceByName, totalFilmsOnSearch } from './apiServiceMovies';
+
+import {  totalFilmsOnSearch } from './apiServiceMovies';
 import { startLoader } from './loader';
 
 refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
@@ -43,7 +44,7 @@ export async function onFormSubmit(e) {
 }
 
 function getPageQuantity(response) {
-  totalFilmsOnSearch = response.data.total_results;
+let  totalFilmsOnSearch = response.data.total_results;
   const pagination = new Pagination('pagination', {
     totalItems: totalFilmsOnSearch,
     itemsPerPage: 20,
