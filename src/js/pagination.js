@@ -62,6 +62,7 @@ function renderMovieCardsToWatched() {
       const moviesArray = data.slice(startIdx, endIdx);
 
       const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+      const IMG_URL_RETINA = 'https://image.tmdb.org/t/p/w1280';
       const DEFAULT_POSTER_URL =
         'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
       
@@ -72,6 +73,10 @@ function renderMovieCardsToWatched() {
           const genresCount = genres.length;
           const posterUrl = poster_path
             ? `${IMG_URL}${poster_path}`
+            : DEFAULT_POSTER_URL;
+          
+          const srcsetChecked = poster_path
+            ? `${IMG_URL}${poster_path} 1x, ${IMG_URL_RETINA}${poster_path} 2x`
             : DEFAULT_POSTER_URL;
 
           if (genresCount === 1) {
@@ -85,7 +90,7 @@ function renderMovieCardsToWatched() {
           return `<li class="film-card">
       <a href="modal-film.html" class="film-card__link" >
         <div class="film-card__img">
-          <img src="${posterUrl}" alt="${title}" loading="lazy" data-id="${id}"/>
+          <img src="${posterUrl}" alt="${title}" srcset="${srcsetChecked}" loading="lazy" data-id="${id}"/>
         </div>
         <div class="film-card__info">
           <p class="film-card__title">${title}</p>
