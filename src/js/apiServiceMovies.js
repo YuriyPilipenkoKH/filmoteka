@@ -1,9 +1,5 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { startLoader, stopLoader } from './loader';
-
-
-let totalFilmsOnSearch = 0;
 
 export class MoviesServiceByName {
   constructor(options) {
@@ -24,7 +20,6 @@ export class MoviesServiceByName {
         stopLoader();
         return;
       }
-      totalFilmsOnSearch = response.data.total_results;
       return response;
     } catch (error) {
       console.log(error);
@@ -73,5 +68,3 @@ export class MoviesService {
     this.page = 1;
   }
 }
-
-export { totalFilmsOnSearch };
