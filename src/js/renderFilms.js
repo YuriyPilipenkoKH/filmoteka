@@ -67,9 +67,12 @@ export function renderMoviesMarkup(response) {
       .join('');
 
     refs.galleryList.innerHTML = markup;
-    paginationRender();
     stopLoader();
     onToTop();
+
+    if (refs.isTrendingMoviesActive) {
+      return paginationRender();
+    }
   } catch (error) {
     console.log(error);
   }
