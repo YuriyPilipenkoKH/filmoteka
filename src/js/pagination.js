@@ -4,7 +4,7 @@ import '../sass/components/_my-library.scss';
 import '../sass/components/_img-library.scss';
 import { refs } from './refs';
 import { startLoader, stopLoader } from './loader';
-
+// start
 const paginationElement = document.getElementById('pagination');
 
 function renderMovieCardsToWatched() {
