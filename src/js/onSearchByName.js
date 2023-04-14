@@ -5,7 +5,7 @@ import { renderMoviesMarkup } from './renderFilms';
 import { startLoader, stopLoader } from './loader';
 import { refs } from './refs';
 import { MoviesServiceByName } from './apiServiceMovies';
-import { startLoader } from './loader';
+
 
 refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
 
@@ -29,12 +29,13 @@ export async function onFormSubmit(e) {
     stopLoader();
     return;
   } else {
-    startLoader();
+  
     try {
       moviesServiceByName
         .fetchMoviesByName()
         .then(getPageQuantity)
         .then(renderMoviesMarkup);
+        stopLoader();
       refs.isTrendingMoviesActive = false;
     } catch (error) {
       console.log(error);
