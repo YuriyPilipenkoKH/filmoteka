@@ -4,7 +4,8 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { renderMoviesMarkup } from './renderFilms';
 import { startLoader, stopLoader } from './loader';
 import { refs } from './refs';
-import { MoviesServiceByName, totalFilmsOnSearch } from './apiServiceMovies';
+import { MoviesServiceByName } from './apiServiceMovies';
+import {  totalFilmsOnSearch } from './apiServiceMovies';
 import { startLoader } from './loader';
 
 refs.moviesSearchForm.addEventListener('submit', onFormSubmit);
