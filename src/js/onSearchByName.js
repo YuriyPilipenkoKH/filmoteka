@@ -44,7 +44,7 @@ export async function onFormSubmit(e) {
 }
 
 function getPageQuantity(response) {
-  totalFilmsOnSearch = response.data.total_results;
+let  totalFilmsOnSearch = response.data.total_results;
   const pagination = new Pagination('pagination', {
     totalItems: totalFilmsOnSearch,
     itemsPerPage: 20,
