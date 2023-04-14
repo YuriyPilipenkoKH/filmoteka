@@ -1,6 +1,8 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+let totalFilmsOnSearch = 0;
+
 export class MoviesServiceByName {
   constructor(options) {
     this.searchQuery = '';
@@ -19,6 +21,7 @@ export class MoviesServiceByName {
         Notify.info(`Nothing was found for your '${this.searchQuery}' request`);
         return;
       }
+      totalFilmsOnSearch = response.data.total_results;
       return response;
     } catch (error) {
       console.log(error);
