@@ -23,7 +23,7 @@ export class MoviesServiceByName {
       );
       if (response.data.results.length === 0) {
         Notify.info(`Nothing was found for your '${this.searchQuery}' request`);
-
+        stopLoader();
         return;
       }
       return response;
