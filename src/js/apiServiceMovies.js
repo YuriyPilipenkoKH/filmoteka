@@ -1,6 +1,9 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+import { startLoader, stopLoader } from './loader';
+
+
 let totalFilmsOnSearch = 0;
 
 export class MoviesServiceByName {

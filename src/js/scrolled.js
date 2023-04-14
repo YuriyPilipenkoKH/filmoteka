@@ -5,8 +5,6 @@ function onScroll() {
   const scrolled = window.pageYOffset;
   const coords = document.documentElement.clientHeight;
 
-
-
   if (scrolled > coords) {
     toTop.classList.add('visible');
   }
