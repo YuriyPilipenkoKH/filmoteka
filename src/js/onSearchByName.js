@@ -16,7 +16,7 @@ const moviesServiceByName = new MoviesServiceByName({
 
 export async function onFormSubmit(e) {
   e.preventDefault();
-  startLoader();
+  // startLoader();
   moviesServiceByName.resetPage();
 
   const { query } = e.target.elements;
