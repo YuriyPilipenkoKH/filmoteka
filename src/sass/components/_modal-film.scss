@@ -55,7 +55,7 @@
   right: 8px;
 
   cursor: pointer;
-  fill: black;
+  fill: var(--secondary-text-color);
   background-color: transparent;
   border: none;
 }
@@ -138,7 +138,7 @@
 .modal__slash {
   width: 100px;
   flex: none;
-  color: #8c8c8c;
+  color: var(--add-text-color);
 }
 
 .vote-average {
