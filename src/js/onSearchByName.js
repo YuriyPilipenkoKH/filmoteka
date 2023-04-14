@@ -54,7 +54,7 @@ function getPageQuantity(response) {
   pagination.on('beforeMove', event => {
     const currentPage = event.page;
     moviesServiceByName.page = currentPage;
-    startLoader();
+    // startLoader();
     moviesServiceByName.fetchMoviesByName().then(renderMoviesMarkup);
   });
 
