@@ -121,8 +121,8 @@ function renderMovieCardsToQueue() {
     paginationElement.style.display = 'none';
     stopLoader();
   } else {
-    const DEFAULT_POSTER_URL =
-      'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+    // const DEFAULT_POSTER_URL =
+    //   'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
 
     const itemsPerPage = 20;
     const totalItems = moviesInQueue.length;
@@ -166,6 +166,10 @@ function renderMovieCardsToQueue() {
       const moviesArray = data.slice(startIdx, endIdx);
 
       const IMG_URL = 'https://image.tmdb.org/t/p/w500';
+      const IMG_URL_RETINA = 'https://image.tmdb.org/t/p/w1280';
+      const DEFAULT_POSTER_URL =
+     'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+
       const markup = moviesArray
         .map(({ poster_path, title, genres, id, release_date }) => {
           const date = release_date.split('').splice(0, 4).join('');
