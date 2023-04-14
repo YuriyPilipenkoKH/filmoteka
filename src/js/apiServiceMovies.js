@@ -70,3 +70,5 @@ export class MoviesService {
     this.page = 1;
   }
 }
+
+export { totalFilmsOnSearch };
