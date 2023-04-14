@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-// let totalFilmsOnSearch = 0;
+let totalFilmsOnSearch = 0;
 
 export class MoviesServiceByName {
   constructor(options) {
@@ -23,7 +23,7 @@ export class MoviesServiceByName {
         return;
       }
       totalFilmsOnSearch = response.data.total_results;
-      totalFilmsOnSearch = response.data.total_results;
+    
       return response;
     } catch (error) {
       console.log(error);
