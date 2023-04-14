@@ -11,8 +11,6 @@ export function paginationRender() {
     page: 1,
   });
 
-  const container = document.getElementById('pagination');
-
   const pagination = new Pagination('pagination', {
     totalItems: totalFilms,
     itemsPerPage: 20,
