@@ -1,10 +1,6 @@
 import axios from 'axios';
-import throttle from 'lodash.throttle';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-import { refs } from './refs';
-
-import { renderMoviesMarkup } from './renderFilms';
 import { startLoader, stopLoader } from './loader';
 
 export class MoviesServiceByName {
@@ -23,7 +19,7 @@ export class MoviesServiceByName {
       );
       if (response.data.results.length === 0) {
         Notify.info(`Nothing was found for your '${this.searchQuery}' request`);
-
+        stopLoader();
         return;
       }
       return response;
