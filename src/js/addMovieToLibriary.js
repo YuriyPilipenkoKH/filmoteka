@@ -9,10 +9,7 @@ import {
 import axios from 'axios';
 const BASE_URL = 'https://api.themoviedb.org/';
 const API_KEY = '90c7ff0c6a89140d8ec65b5296dfcca2';
-const IMG_URL = 'https://image.tmdb.org/t/p/w500';
-const IMG_URL_RETINA = 'https://image.tmdb.org/t/p/w1280';
-const DEFAULT_POSTER_URL =
-  'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+
 
 refs.movieModal.addEventListener('click', onModalButtonClick);
 

@@ -17,8 +17,7 @@ function renderMovieCardsToWatched() {
     paginationElement.style.display = 'none';
     stopLoader();
   } else {
-    const DEFAULT_POSTER_URL =
-      'https://motivatevalmorgan.com/wp-content/uploads/2016/06/default-movie.jpg';
+
     paginationElement.style.display = 'flex';
     const itemsPerPage = 20;
     const totalItems = moviesInWatched.length;

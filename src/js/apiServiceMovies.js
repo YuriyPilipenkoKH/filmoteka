@@ -1,10 +1,6 @@
 import axios from 'axios';
-import throttle from 'lodash.throttle';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
-import { refs } from './refs';
-
-import { renderMoviesMarkup } from './renderFilms';
 import { startLoader, stopLoader } from './loader';
 
 export class MoviesServiceByName {

@@ -1,4 +1,4 @@
-import { refs } from './refs';
+
 window.addEventListener('scroll', onScroll);
 function onScroll() {
   const toTop = document.querySelector('.back-to-top');
